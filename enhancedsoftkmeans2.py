@@ -5,18 +5,18 @@ import matplotlib.pyplot as plt
 import math
 
 data1=[]
-for i in range(100):
-	data1=data1+[[0.5+0.5*random.random(),0.5+0.5*random.random()]]
+for i in range(200):
+	data1=data1+[[6+4*random.random(),6+4*random.random()]]
 	
 data2=[]
 for i in range(100):
-	data2=data2+[[0.5*random.random(),0.5*random.random()]]
+	data2=data2+[[2+3*random.random(),2+3*random.random()]]
 
 #data3 =[]
 #for i in range(30):
-#	data3=data3+[[0.8,random.random()]]
+#	data3=data3+[[0.8+0.1*random.random(),0.3*random.random()]]
 
-data=data1+data2#+data3
+data=data2+data1#+data3
 
 
 
@@ -61,7 +61,7 @@ for k in range(4):
 p=[]
 for k in range(4):
 	p=p+[1]
-rsum=[[],[],[],[],]
+
 turn = 0
 while turn<10:
 	turn = turn+1
@@ -118,8 +118,8 @@ circle2= plt.Circle(assign[2],np.sqrt(v[2]),color='y',fill=False)
 circle3= plt.Circle(assign[3],np.sqrt(v[3]),color='b',fill=False)
 
 fig, ax=plt.subplots()
-plt.xlim([-0.3,1.3])
-plt.ylim([-0.3,1.3])
+plt.xlim([-3,13])
+plt.ylim([-3,13])
 ax.add_artist(circle0)
 ax.add_artist(circle1)
 ax.add_artist(circle2)
