@@ -53,15 +53,18 @@ for i in range(4):
 update_assign=[]
 for k in range(4):
 	update_assign=update_assign+[[]]	
-a=0
-b=[]	
+
+I = 2 # dimension
+
+v=[] # variance or 1/beta	
 for k in range(4):
-	b=b+[1/(7*np.var(data1))]
+	v=v+[7*np.var(data1)]
 
 p=[]
 for k in range(4):
 	p=p+[1]
-	
+
+a=0	
 while a<10:
 	a=a+1 
 	sum=[]
@@ -70,10 +73,10 @@ while a<10:
 	for n in range(len(data)):
 		s=0
 		for k in range(4):
-			s=s+p[k]*np.exp(-b[k]*(LA.norm(np.array(assign[k])-np.array(data[n]))))
+			s=s+p[k]*np.exp(-1/v[k]*(LA.norm(np.array(assign[k])-np.array(data[n]))))
 			sum[n]=s
 		for j in range(4):
-			r[j][n]=p[j]*np.exp(-b[j]*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
+			r[j][n]=p[j]*np.exp(-1/v[j]*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
 			#print a,j,n,r[j][n]
 	rsum=[]
 	for i in range(4):
@@ -101,10 +104,10 @@ for n in range(len(data)):
 	c[i]=c[i]+[data[n]]
 
 
-circle0= plt.Circle(assign[0],1/math.sqrt(b[0]),color='r',fill=False)
-circle1= plt.Circle(assign[1],1/math.sqrt(b[1]),color='g',fill=False)
-circle2= plt.Circle(assign[2],1/math.sqrt(b[2]),color='y',fill=False)
-circle3= plt.Circle(assign[3],1/math.sqrt(b[3]),color='b',fill=False)
+circle0= plt.Circle(assign[0],math.sqrt(v[0]),color='r',fill=False)
+circle1= plt.Circle(assign[1],math.sqrt(v[1]),color='g',fill=False)
+circle2= plt.Circle(assign[2],math.sqrt(v[2]),color='y',fill=False)
+circle3= plt.Circle(assign[3],math.sqrt(v[3]),color='b',fill=False)
 
 fig, ax=plt.subplots()
 plt.xlim([-0.3,1.3])
