@@ -21,6 +21,8 @@ It still looks like 4 colored clusters, but the circles show the 4 clusters redu
 
 ![better 2 clusters ](https://github.com/physhik/spectral-clustering/blob/master/2clusters.png)
 
+The enhanced soft K-means allow each cluster to have independent size of the circle. In the figure, two circles vanish and 2 clear clusters remain.  
+ 
  
 ### Some review
 
