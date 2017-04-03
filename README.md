@@ -18,6 +18,8 @@ If we set the stiffness of the soft clustering well, we can obtain the following
 ![2 clusters](https://github.com/physhik/spectral-clustering/blob/master/2clusters.png)
  
 It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. 
+
+
  
 ### Some review
 

@@ -55,8 +55,13 @@ for k in range(4):
 	update_assign=update_assign+[[]]	
 a=0
 b=[]	
-for i in range(4):
+for k in range(4):
 	b=b+[1/(7*np.var(data1))]
+
+p=[]
+for k in range(4):
+	p=p+[1]
+	
 while a<10:
 	a=a+1 
 	sum=[]
@@ -65,10 +70,10 @@ while a<10:
 	for n in range(len(data)):
 		s=0
 		for k in range(4):
-			s=s+np.exp(-b[k]*(LA.norm(np.array(assign[k])-np.array(data[n]))))
+			s=s+p[k]*np.exp(-b[k]*(LA.norm(np.array(assign[k])-np.array(data[n]))))
 			sum[n]=s
 		for j in range(4):
-			r[j][n]=np.exp(-b[k]*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
+			r[j][n]=p[j]*np.exp(-b[j]*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
 			#print a,j,n,r[j][n]
 	rsum=[]
 	for i in range(4):
