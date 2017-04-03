@@ -1,3 +1,6 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 ## Spectral Clustering (Soft K-means)
 
 I felt there's no good python tutorial for spectral clustering. I had made it up by myself.  
