@@ -12,8 +12,13 @@ data2=[]
 for i in range(100):
 	data2=data2+[[0.5*random.random(),0.5*random.random()]]
 
+#data3 =[]
+#for i in range(30):
+#	data3=data3+[[0.8,random.random()]]
 
-data=data1+data2
+data=data1+data2#+data3
+
+
 
 datax=[]
 for i in range(len(data)):
@@ -25,12 +30,14 @@ for i in range(len(data)):
 
 plt.scatter(datax,datay)
 plt.show()
+
+
+print np.var(data)
 	
 assign = []
 for j in range(4):
 	assign=assign+[[random.random(),random.random()]]
 print assign
-print len(data)
 
 
 
@@ -47,7 +54,8 @@ update_assign=[]
 for k in range(4):
 	update_assign=update_assign+[[]]	
 a=0	
-b=100.0
+
+b=1/(7*np.var(data1))
 while a<10:
 	a=a+1 
 	sum=[]
@@ -60,7 +68,7 @@ while a<10:
 			sum[n]=s
 		for j in range(4):
 			r[j][n]=np.exp(-b*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
-			print a,j,n,r[j][n]
+			#print a,j,n,r[j][n]
 	rsum=[]
 	for i in range(4):
 		rsum=rsum+[[]]
@@ -80,11 +88,12 @@ while a<10:
 print assign
 c=[[],[],[],[]]
 for n in range(len(data)):
+	a=[]
 	for k in range(4):
-		if r[k][n]>0.8:
-			c[k]=c[k]+[data[n]]	
+		a=a+[r[k][n]]
+	i=a.index(max(a))
+	c[i]=c[i]+[data[n]]
 
-print c[0]
 
 circle0= plt.Circle(assign[0],1/math.sqrt(b),color='r',fill=False)
 circle1= plt.Circle(assign[1],1/math.sqrt(b),color='g',fill=False)
@@ -92,6 +101,8 @@ circle2= plt.Circle(assign[2],1/math.sqrt(b),color='y',fill=False)
 circle3= plt.Circle(assign[3],1/math.sqrt(b),color='b',fill=False)
 
 fig, ax=plt.subplots()
+plt.xlim([-0.3,1.3])
+plt.ylim([-0.3,1.3])
 ax.add_artist(circle0)
 ax.add_artist(circle1)
 ax.add_artist(circle2)
