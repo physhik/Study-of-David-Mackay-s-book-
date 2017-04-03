@@ -63,7 +63,7 @@ for k in range(4):
 	p=p+[1]
 rsum=[[],[],[],[],]
 turn = 0
-while turn<10:
+while turn<7:
 	turn = turn+1
 	sum=[]
 	for n in range(len(data)):
@@ -133,6 +133,8 @@ ax.scatter([x for x,y in c[3]],[y for x,y in c[3]],color='b')
 
 plt.show()
 
+print np.sqrt(v[0]),np.sqrt(v[1]),np.sqrt(v[2]),np.sqrt(v[3])
+print np.var(c[0]),np.var(c[1]),np.var(c[2]),np.var(c[3])
 
 	
 

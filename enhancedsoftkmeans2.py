@@ -6,11 +6,11 @@ import math
 
 data1=[]
 for i in range(200):
-	data1=data1+[[6+4*random.random(),6+4*random.random()]]
+	data1=data1+[[0.6+0.4*random.random(),0.6+0.4*random.random()]]
 	
 data2=[]
 for i in range(100):
-	data2=data2+[[2+3*random.random(),2+3*random.random()]]
+	data2=data2+[[0.2+.3*random.random(),0.2+0.3*random.random()]]
 
 #data3 =[]
 #for i in range(30):
@@ -61,9 +61,9 @@ for k in range(4):
 p=[]
 for k in range(4):
 	p=p+[1]
-
+rsum=[[],[],[],[],]
 turn = 0
-while turn<10:
+while turn<4:
 	turn = turn+1
 	sum=[]
 	for n in range(len(data)):
@@ -118,8 +118,8 @@ circle2= plt.Circle(assign[2],np.sqrt(v[2]),color='y',fill=False)
 circle3= plt.Circle(assign[3],np.sqrt(v[3]),color='b',fill=False)
 
 fig, ax=plt.subplots()
-plt.xlim([-3,13])
-plt.ylim([-3,13])
+plt.xlim([-.3,1.3])
+plt.ylim([-.3,1.3])
 ax.add_artist(circle0)
 ax.add_artist(circle1)
 ax.add_artist(circle2)
@@ -133,6 +133,8 @@ ax.scatter([x for x,y in c[3]],[y for x,y in c[3]],color='b')
 
 plt.show()
 
+print np.sqrt(v[0]),np.sqrt(v[1]),np.sqrt(v[2]),np.sqrt(v[3])
+print np.var(c[0]),np.var(c[1]),np.var(c[2]),np.var(c[3])
 
 	
 
