@@ -19,7 +19,7 @@ If we set the stiffness of the soft clustering well, we can obtain the following
  
 It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. 
 
-![better 2 clusters ](https://github.com/physhik/spectral-clustering/blob/master/2clusters.png)
+![better 2 clusters ](https://github.com/physhik/spectral-clustering/blob/master/enhancedsoftkmeans1.png)
 
 The enhanced soft K-means allow each cluster to have independent size of the circle. In the figure, two circles vanish and 2 clear clusters remain.  
  
