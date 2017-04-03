@@ -1,5 +1,8 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+<head>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
 
 ## Spectral Clustering (Soft K-means)
 
@@ -18,6 +21,8 @@ First, a good clustering has predictive power. Second, clusters can be a useful 
 The K-means algorithm is an algorithm for putting N data points in an M-dimensional space into K clusters. Each cluster is parameterized by a vector${\textbf m}^{(k)}$ called its mean. 
 
 First of all, set K means {${\textbf m}^{(k)}$} to random values. In the assignment step, each data point n isassigned to the nearest mean. 
+\\[ {1 \over n }\\]
+
 $$
 \hat k^{(n)} = argmin_k d({\textbf m}^{(k)}, {\textbf x}^{(n)})
 $$
