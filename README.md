@@ -12,7 +12,7 @@ The theory for clustering and soft k-means can be found at the [book](http://www
 
 ### Some review
 
-####Why clustering?
+#### Why clustering?
 
 First, a good clustering has predictive power. Second, clusters can be a useful aid to communication because they allow lossy compression. A third reason for making a cluster model is that failures of the cluster model may highlight interesting objects that deserve special attention. A fourth reason for liking clustering algorithms is that they may serve as models of learning processes in neural systems.
 
