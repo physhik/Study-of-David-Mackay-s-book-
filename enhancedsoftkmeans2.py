@@ -61,7 +61,7 @@ for k in range(4):
 p=[]
 for k in range(4):
 	p=p+[1]
-rsum=[[],[],[],[],]
+rsum=[[],[],[],[]]
 turn = 0
 while turn<4:
 	turn = turn+1
@@ -87,7 +87,7 @@ while turn<4:
 		ua=[0,0]
 		for n in range(len(data)):
 			ua[0]=ua[0]+r[k][n]*data[n][0]/float(rsum[k])
-			ua[1]=ua[0]+r[k][n]*data[n][1]/float(rsum[k])
+			ua[1]=ua[1]+r[k][n]*data[n][1]/float(rsum[k])
 			update_assign[k]=ua
 			
 	assign= update_assign

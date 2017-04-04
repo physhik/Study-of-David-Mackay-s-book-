@@ -27,3 +27,8 @@ The radii of the two main circles are about 0.142(red) and 0.149(yellow). The st
  
 
 ![better and different 2 clusters ](https://github.com/physhik/spectral-clustering/blob/master/enhancedsoftkmeans3.png)
+
+
+If the data are aligned, the circular deviation is not so good. We can split the deviations about each axis.  
+
+![aligned 2 clusters ](https://github.com/physhik/spectral-clustering/blob/master/alignsoftkmeans.png)
