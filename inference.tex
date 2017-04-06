@@ -184,7 +184,7 @@ $P(s|F, \mathcal{H}_1)$ and $P(s|F,\mathcal{H}_0)$. We can give names to these q
 quantity $P(s|F, \mathcal{H}_1)$  is a measure of how much the data favour $ \mathcal{H}_1)$, and we
 call it the evidence for model $ \mathcal{H}_1)$. {\it How model comparison works : The evidence for a model is usually the normalizing constant of an earlier Bayesian inference.}
 
-\section{Clustering}
+\section{Clustering and Maximum Likelihood}
 \subsection{Motivation of clustering}
 First, a good clustering has
 predictive power. Second, clusters can be a useful aid to communication because they allow
@@ -231,7 +231,7 @@ $$
 $$
 = {P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) \over \sum_{k_n}  P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) +P(x_n|k_n=2,\vect{\theta})P(k_n=2,\vect{\theta}) }
 $$
-where $\vect{\theta}=\mu_k, ~\sigma_k$. 
+where $\vect{\theta}=(\mu_k, ~\sigma_k)$. 
 $$
 P(k_n=1,\vect{\theta}) \equiv p_1,~~P(k_n=2,\vect{\theta}) \equiv p_2
 $$
@@ -271,7 +271,7 @@ Therefore,
 $$
 \mu'_k={\sum_n p_{k|n} ~x_n \over \sum_n p_{k|n} }
 $$
-Note that this equation is exactly the same as the updated responsibilities in soft K-means clustering. 
+Note that this equation is exactly the same as the updated means from the responsibilities and data points in soft K-means clustering. $p_{k|n}$ is the responsibility $r^{(k)}_n$.
 
 $$
 {{\partial \over \partial{\mu_k}}L \over {\partial^2 \over \partial{\mu_k}^2}L  } = {\sum_n p_{k|n} ~x_n -  \mu_k\sum_n p_{k|n} \over -\sum_n p_{k|n}}= -\mu'_k+\mu_k
@@ -302,7 +302,7 @@ $$
 L \equiv \log P(\{x_n\}|\sigma_n,\mu) = -\sum_n \log~\sigma_n-\sum_n {(x_n -\mu)^2 \over 2\sigma_n^2} =0 
 $$
 $$
-{\partial L \over \partial x_n} = -\sum_n \left({x_n-\mu \over \sigma^2_n}\right)=-\sum_n{x_n \over \sigma_n^2}-\mu~\sum_n {1 \over \sigma_n^2}
+{\partial L \over \partial x_n} = -\sum_n \left({x_n-\mu \over \sigma^2_n}\right)=-\sum_n{x_n \over \sigma_n^2}+\mu\sum_n {1 \over \sigma_n^2}
 $$
 $$
 \mu= {\sum_n{x_n\over \sigma_n^2}\over{1\over \sigma_n^2}}
@@ -356,9 +356,49 @@ P(\{x_n\})=\int^{\infty}_{-\infty} ~d\mu ~P(\{x_n\}|\mu)  {1 \over \sigma_{\mu}}
 $$
 
 
+
+
 \section{Monte Carlo }
 
+\subsection{Exercise 27.1}
+$r$ is a positive integer, and posterior over lambda
+$$
+P(\lambda|r)= {P(r|\lambda) P(\lambda)\over P(r)}
+$$
+$$
+P(r|\lambda)=\exp(\lambda){\lambda^r \over r!}
+$$
+By assumption
+$$
+P(\lambda)={1\over \lambda}
+$$
+Then, the normalizing constant is 
+$$
+P(r)=\int^{\infty}_0~d\lambda~ \exp(\lambda){\lambda^r \over r!}{1\over \lambda}= {\Gamma(r) \over r!} = {1\over r}
+$$
+We need to find the $lambda$ for maximum likelihood. By differentiate the posterior probability distribution function with respect to $\lambda$, 
+it has a maximum at $\lambda = \lambda_0=r-1$, and 
+$$
+P(\lambda=\lambda_0=r-1|r)={(r-1)^{(r-1)}\exp(r-1)\over (r-1)!}
+$$
+$$
+c=-{\partial^2 \over \partial \lambda^2}\log~P(\lambda|r)|_{\lambda=\lambda_0=r-1}={1-r \over \lambda^2}|_{\lambda=\lambda_0=r-1}={1\over r-1}
+$$ 
 
+Then, the Laplace approximation is 
+$$
+G(\lambda|r)= P(\lambda=\lambda_0=r-1|r)\exp\left(-{c\over 2}{(\lambda-\lambda_0)^2}\right)
+$$
+
+
+\begin{figure}
+\centerline{
+\begin{tabular}{cc}
+\includegraphics[width=.5\textwidth]{laplace.pdf} &
+\includegraphics[width=.5\textwidth]{laplace2.pdf}
+\end{tabular}}
+\caption[The plot of exercise 27.1]{\label{laplace} \small The blue plot is Poisson distribution and the orange one is the Laplace approximation. Look into the plot around the maximum. Very well matched around the tip.  }
+\end{figure}
 
 \end{document}
 
