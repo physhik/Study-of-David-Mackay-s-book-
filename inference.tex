@@ -151,7 +151,7 @@ assumption $\mathcal{H}^*$, and working out our predictions about some quantity 
 $P(t |D, \mathcal{H},I)$, we obtain predictions that take into account our uncertainty 
 about H by using the sum rule
 $$
-P({\textbf t} | D, I)= \Sigma_{\mathcal{H}} P({\textbf t}|D, \mathcal{H},I)P( \mathcal{H}|D,I) 
+P({\textbf t} | D, I)= \sum_{\mathcal{H}} P({\textbf t}|D, \mathcal{H},I)P( \mathcal{H}|D,I) 
 $$
 
 This is another contrast with orthodox statistics, in which it is conventional
@@ -214,11 +214,11 @@ $$
 In the update step, the means are adjusted to
 match the sample means of the data points that they are responsible for. The update step is very similar to how to find the center of the mass in physics. 
 $$
-{\textbf m}^{(k)}= {\Sigma_n ~ r^{(n)}_k {\textbf x}^{(n)} \over R^{(k)}}
+{\textbf m}^{(k)}= {\sum_n ~ r^{(n)}_k {\textbf x}^{(n)} \over R^{(k)}}
 $$
 where $R^{(k)}$ is the total responsibility of mean $k$
 $$
-R^{(k)}=\Sigma_n~r^{(n)}_k
+R^{(k)}=\sum_n~r^{(n)}_k
 $$
 
 
@@ -229,7 +229,7 @@ $$
 P(k_n = 1|x_n, \vect{\theta})= {P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) \over P(x_n,\vect{\theta})}
 $$
 $$
-= {P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) \over \Sigma_{k_n}  P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) +P(x_n|k_n=2,\vect{\theta})P(k_n=2,\vect{\theta}) }
+= {P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) \over \sum_{k_n}  P(x_n|k_n=1,\vect{\theta})P(k_n=1,\vect{\theta}) +P(x_n|k_n=2,\vect{\theta})P(k_n=2,\vect{\theta}) }
 $$
 where $\vect{\theta}=\mu_k, ~\sigma_k$. 
 $$
@@ -253,11 +253,33 @@ By assumption, the prior probability $p_1=p_2=1/2$ then, (22.17) of the book is 
 $$
 L\equiv \log \Pi_n P(x_n|\{\mu_k\},~\sigma)
 $$
+then trivially, 
 $$
-{\partial \over \partial{\mu_k}}L = \Sigma_n  {p_{k|n} (x_n-\mu_k)\over \sigma^2}
+{\partial \over \partial{\mu_k}}L = \sum_n  {p_{k|n} (x_n-\mu_k)\over \sigma^2}
 $$
+$$
+{\partial^2 \over \partial{\mu_k}^2}L = -\sum_n  {p_{k|n}  \over \sigma^2}
+$$
+The new updated $\vect \mu'$ should maximize the likelihood. Then,
+$$
+{\partial \over \partial{\mu_k'}}L = \sum_n  {p_{k|n} (x_n-\mu_k')\over \sigma^2}=0
+$$
+$$
+\sum_n p_{k|n} ~x_n - \sum_n p_{k|n} ~\mu'_k=\sum_n p_{k|n} ~x_n -  \mu'_k\sum_n p_{k|n}=0
+$$
+Therefore,
+$$
+\mu'_k={\sum_n p_{k|n} ~x_n \over \sum_n p_{k|n} }
+$$
+Note that this equation is exactly the same as the updated responsibilities in soft K-means clustering. 
 
-
+$$
+{{\partial \over \partial{\mu_k}}L \over {\partial^2 \over \partial{\mu_k}^2}L  } = {\sum_n p_{k|n} ~x_n -  \mu_k\sum_n p_{k|n} \over -\sum_n p_{k|n}}= -\mu'_k+\mu_k
+$$
+Thus, 
+$$
+\mu'_k=\mu_k-{{\partial \over \partial{\mu_k}}L \over {\partial^2 \over \partial{\mu_k}^2}L  }
+$$
 
 \subsection{Exercise 22.15}
 $$
@@ -267,23 +289,23 @@ $$
 x_n=(-27.02, 3.57, 8.191, 9.898, 9.603, 9.945, 10.056)
 $$
 $$
-{\Sigma_n x_n\over N}=3.46329
+{\sum_n x_n\over N}=3.46329
 $$
 It must not be the correct mean. 
 
 The likelihood is as followings by the description of the problem. 
 $$
-P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \Pi_n{1\over \sigma_n } \exp(-\Sigma_n {(x_n-\mu)^2 \over 2\sigma^2_n})
+P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \Pi_n{1\over \sigma_n } \exp(-\sum_n {(x_n-\mu)^2 \over 2\sigma^2_n})
 $$ 
 To find the maximum likelihood,
 $$
-L \equiv \log P(\{x_n\}|\sigma_n,\mu) = -\Sigma_n \log~\sigma_n-\Sigma_n {(x_n -\mu)^2 \over 2\sigma_n^2} =0 
+L \equiv \log P(\{x_n\}|\sigma_n,\mu) = -\sum_n \log~\sigma_n-\sum_n {(x_n -\mu)^2 \over 2\sigma_n^2} =0 
 $$
 $$
-{\partial L \over \partial x_n} = -\Sigma_n \left({x_n-\mu \over \sigma^2_n}\right)=-\Sigma_n{x_n \over \sigma_n^2}-\mu~\Sigma_n {1 \over \sigma_n^2}
+{\partial L \over \partial x_n} = -\sum_n \left({x_n-\mu \over \sigma^2_n}\right)=-\sum_n{x_n \over \sigma_n^2}-\mu~\sum_n {1 \over \sigma_n^2}
 $$
 $$
-\mu= {\Sigma_n{x_n\over \sigma_n^2}\over{1\over \sigma_n^2}}
+\mu= {\sum_n{x_n\over \sigma_n^2}\over{1\over \sigma_n^2}}
 $$
 When $x_n=(-27.02, 3.57)$, the correspondent $\sigma_n$ are so huge, then it contributes very tiny in $\mu$. Then, the mean should be close to mean of $(8.191, 9.898,$ 
 $9.603, 9.945, 10.056)$.
@@ -299,11 +321,11 @@ P(\sigma_n|\{x_n\},\mu)= {P(\{x_n\}|\sigma_n,\mu) P(\sigma_n|\mu)\over P(\{x_n\}
 $$
 Given
 $$
-P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \left( \Pi_n{1\over \sigma_n }\right) \exp\left(-\Sigma_n {(x_n-\mu)^2 \over 2\sigma^2_n}\right)
+P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \left( \Pi_n{1\over \sigma_n }\right) \exp\left(-\sum_n {(x_n-\mu)^2 \over 2\sigma^2_n}\right)
 $$ 
 and
 $$
-P(\sigma_n|\mu)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\Sigma_n \sigma_n \over s})\footnote{not sure if it is right.}
+P(\sigma_n|\mu)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\sum_n \sigma_n \over s})\footnote{not sure if it is right.}
 $$
 where $(s,~c)=(10,0.1)$.
 
