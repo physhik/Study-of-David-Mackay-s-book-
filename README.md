@@ -51,3 +51,13 @@ Posterior probability distribution function from given data. The distribution fu
 ![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png)
 
 ![Posterior probability distribution function from given data around x=-27](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png)
+
+The mathematica file is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/.png)
+
+
+## Exercise 27.1 of the book. 
+
+Laplace approximation of Poisson distribution
+
+
+![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/laplaceofpoisson.png)
