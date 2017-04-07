@@ -48,6 +48,6 @@ In case that the exercise asks some plots or numerical tests, I display plots on
 
 Posterior probability distribution function from given data. The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around $\mu=10$. The small bumps around $x_n=(-27,~3.6,~8)$ are also seen in the graph.
 
-![Posterior probability distribution function from given data ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png)
+![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.pdf)
 
-![Posterior probability distribution function from given data around x=-27 ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png)
+![Posterior probability distribution function from given data around x=-27](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.pdf)
