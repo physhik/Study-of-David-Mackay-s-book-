@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 APR 2017 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 APR 2017 13:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -817,7 +817,7 @@ LaTeX Info: Redefining \bm on input line 207.
 )
 \c@definition=\count139
 
-No file "David Mackay's book review and some solutions of exercises".aux.
+(./David Mackay's book review and some solutions of exercises.aux)
 \openout1 = `"David Mackay's book review and some solutions of exercises.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
@@ -836,6 +836,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
 \AtBeginShipoutBox=\box62
 Package hyperref Info: Link coloring OFF on input line 112.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -847,6 +848,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 112.
 LaTeX Info: Redefining \pageref on input line 112.
 LaTeX Info: Redefining \nameref on input line 112.
+
+(./David Mackay's book review and some solutions of exercises.out)
+(./David Mackay's book review and some solutions of exercises.out)
 \@outlinefile=\write4
 \openout4 = `"David Mackay's book review and some solutions of exercises.out"'.
 
@@ -883,7 +887,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.12} (current compat level: 1.10).
 
-<probability_formulae.png, id=7, 596.2275pt x 681.54625pt>
+<probability_formulae.png, id=55, 596.2275pt x 681.54625pt>
 File: probability_formulae.png Graphic file (type png)
 
 <use probability_formulae.png>
@@ -915,13 +919,13 @@ cmr/m/n/10.95 191\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95
 :\OT1/cmr/m/n/10.95 898\OML/cmm/m/it/10.95 ;$
  []
 
-[5] <7scientistplot.pdf, id=55, 361.35pt x 238.8925pt>
+[5] <7scientistplot.pdf, id=94, 361.35pt x 238.8925pt>
 File: 7scientistplot.pdf Graphic file (type pdf)
 
 <use 7scientistplot.pdf>
 Package pdftex.def Info: 7scientistplot.pdf used on input line 343.
 (pdftex.def)             Requested size: 180.0pt x 119.00124pt.
- <7scientistplot2.pdf, id=56, 361.35pt x 231.86626pt>
+ <7scientistplot2.pdf, id=95, 361.35pt x 231.86626pt>
 File: 7scientistplot2.pdf Graphic file (type pdf)
 
 <use 7scientistplot2.pdf>
@@ -931,13 +935,13 @@ Package pdftex.def Info: 7scientistplot2.pdf used on input line 343.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./7scientistplot2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <laplace.pdf, id=126, 361.35pt x 230.8625pt>
+>] <laplace.pdf, id=164, 361.35pt x 230.8625pt>
 File: laplace.pdf Graphic file (type pdf)
  <use laplace.pdf>
 Package pdftex.def Info: laplace.pdf used on input line 399.
 (pdftex.def)             Requested size: 180.0pt x 115.00119pt.
 
-<laplace2.pdf, id=127, 361.35pt x 232.87pt>
+<laplace2.pdf, id=165, 361.35pt x 232.87pt>
 File: laplace2.pdf Graphic file (type pdf)
  <use laplace2.pdf>
 Package pdftex.def Info: laplace2.pdf used on input line 399.
@@ -946,33 +950,15 @@ Package pdftex.def Info: laplace2.pdf used on input line 399.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./laplace2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `blr' on page 8 undefined on input line 438.
-
-[8]
+>] [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
  (./David Mackay's book review and some solutions of exercises.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
-
-
-Package rerunfilecheck Warning: File `"David Mackay's book review and some solu
-tions of exercises".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"David Mackay's book review and som
-e solutions of exercises".out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  7C88C242997C4825527FAA191AA3776E;732.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `"David Mackay's book review and some solutio
+ns of exercises".out' has not changed.
+(rerunfilecheck)             Checksum: 7C88C242997C4825527FAA191AA3776E;732.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
  )
 (\end occurred inside a group at level 1)
@@ -980,10 +966,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
 ### simple group (level 1) entered at line 133 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28101 strings out of 493089
- 692557 string characters out of 6134842
+ 28120 strings out of 493089
+ 693114 string characters out of 6134842
  901296 words of memory out of 5000000
- 31035 multiletter control sequences out of 15000+600000
+ 31048 multiletter control sequences out of 15000+600000
  19536 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,84p,756b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1003,10 +989,10 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
 local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on "David Mackay's book review and some solutions of exercises.p
-df" (8 pages, 435950 bytes).
+df" (8 pages, 436858 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
+ 280 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
  28 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

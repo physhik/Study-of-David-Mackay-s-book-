@@ -24,21 +24,30 @@ If we set the stiffness of the soft clustering well, we can obtain the following
  
 ![2 clusters](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png)
  
-It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. 
+It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. The code for above 3 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster.py)
 
 ![better 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans2.png)
 
 The enhanced soft K-means allow each cluster to have independent size of the circle. In the figure, two circles vanish and 2 clear clusters remain.  
  
-The radii of the two main circles are about 0.142(red) and 0.149(yellow). The standard deviations of the two clusters are about 0.02 and 0.02. My soft K-means clustering alogrithm gaussian distribution assume Gaussian distribution. And I chose uniformly random data points.   
+The radii of the two main circles are about 0.142(red) and 0.149(yellow). The standard deviations of the two clusters are about 0.02 and 0.02. My soft K-means clustering alogrithm gaussian distribution assume Gaussian distribution. And I chose uniformly random data points. The code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)
  
 
 ![better and different 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans3.png)
 
 
-If the data are aligned, the circular deviation is not so good. We can split the deviations about each axis. Should be careful of overfitting. It is a weak point of this clustering.   
+If the data are aligned, the circular deviation is not so good. We can split the deviations about each axis. Should be careful of overfitting. It is a weak point of this clustering. The code for above two results is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)  
 
 ![aligned 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/alignsoftkmeans.png)
 
+The code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/axisaligngaussiansoftkmeans.py)
 
+## Exercise 24.3 of the book. 
 
+In case that the exercise asks some plots or numerical tests, I display plots on this md file. 
+
+Posterior probability distribution function from given data. The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around $\mu=10$. The small bumps around $x_n=(-27,~3.6,~8)$ are also seen in the graph.
+
+[Posterior probability distribution function from given data ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png)
+
+[Posterior probability distribution function from given data around x=-27 ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png)
