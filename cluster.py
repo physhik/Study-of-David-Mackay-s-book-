@@ -3,31 +3,28 @@ import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
 
-data1=[]
-for i in range(100):
-	data1=data1+[[0.5+0.5*random.random(),0.5+0.5*random.random()]]
+
+N=100
+K=4
+
+data1=[[0.5+0.5*random.random(),0.5+0.5*random.random()] for i in range(N)]
+data2=[[0.5*random.random(),0.5*random.random()] for i in range(N)]
 	
-data2=[]
-for i in range(100):
-	data2=data2+[[0.5*random.random(),0.5*random.random()]]
+data1=np.array(data1)
+data2=np.array(data2)	
 
+data = np.concatenate((data1,data2))
 
-data=data1+data2
+datax=data[:,0]
+datay=data[:,1]
 
-datax=[]
-for i in range(len(data)):
-	datax=datax+[data[i][0]]
+def displaydata():
+	plt.scatter(datax,datay)
+	plt.show()
 	
-datay=[]
-for i in range(len(data)):
-	datay=datay+[data[i][1]]
 
-plt.scatter(datax,datay)
-plt.show()
-	
-assign = []
-for j in range(4):
-	assign=assign+[[random.random(),random.random()]]
+assign = [[random.random(),random.random()] for k in range(K)]
+assign=np.array(assign)
 
 c0=[]
 c1=[]

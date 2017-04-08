@@ -2,6 +2,7 @@ import random
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
+import math
 
 data1=[]
 for i in range(100):
@@ -11,8 +12,13 @@ data2=[]
 for i in range(100):
 	data2=data2+[[0.5*random.random(),0.5*random.random()]]
 
+#data3 =[]
+#for i in range(30):
+#	data3=data3+[[0.8,random.random()]]
 
-data=data1+data2
+data=data1+data2#+data3
+
+
 
 datax=[]
 for i in range(len(data)):
@@ -24,16 +30,16 @@ for i in range(len(data)):
 
 plt.scatter(datax,datay)
 plt.show()
+
+
+print np.var(data)
 	
 assign = []
 for j in range(4):
 	assign=assign+[[random.random(),random.random()]]
 print assign
 
-c0=[]
-c1=[]
-c2=[]
-c3=[]	
+
 
 
 sum=[]
@@ -48,31 +54,31 @@ update_assign=[]
 for k in range(4):
 	update_assign=update_assign+[[]]	
 a=0	
-b=0.05
-while a<1:
+
+b=1/(7*np.var(data1))
+while a<10:
 	a=a+1 
 	sum=[]
 	for i in range(len(data)):
 		sum=sum+[[]]
 	for n in range(len(data)):
+		s=0
 		for k in range(4):
-			s=0
 			s=s+np.exp(-b*(LA.norm(np.array(assign[k])-np.array(data[n]))))
 			sum[n]=s
-		for j in range(4):		
-			print np.exp(-b*(LA.norm(np.array(assign[3])-np.array(data[n]))))/s
+		for j in range(4):
 			r[j][n]=np.exp(-b*(LA.norm(np.array(assign[j])-np.array(data[n]))))/s
+			#print a,j,n,r[j][n]
 	rsum=[]
 	for i in range(4):
 		rsum=rsum+[[]]
-		
 	for k in range(4):
+		rs=0
 		for n in range(len(data)):
-			rs=0
 			rs=rs+r[k][n]
 			rsum[k]=rs
+		ua=[0,0]
 		for n in range(len(data)):
-			ua=[0,0]
 			ua[0]=ua[0]+r[k][n]*data[n][0]/float(rs)
 			ua[1]=ua[0]+r[k][n]*data[n][1]/float(rs)
 			update_assign[k]=ua
@@ -80,46 +86,34 @@ while a<1:
 	assign= update_assign	
 	
 print assign
-	
-c0x=[]
-for i in range(len(c0)):
-	c0x=c0x+[c0[i][0]]
-	
-c0y=[]
-for i in range(len(c0)):
-	c0y=c0y+[c0[i][1]]
-	
-c1x=[]
-for i in range(len(c1)):
-	c1x=c1x+[c1[i][0]]
-	
-c1y=[]
-for i in range(len(c1)):
-	c1y=c1y+[c1[i][1]]
-	
-c2x=[]
-for i in range(len(c2)):
-	c2x=c2x+[c2[i][0]]
-	
-c2y=[]
-for i in range(len(c2)):
-	c2y=c2y+[c2[i][1]]
-	
-c3x=[]
-for i in range(len(c3)):
-	c3x=c3x+[c3[i][0]]
-	
-c3y=[]
-for i in range(len(c3)):
-	c3y=c3y+[c3[i][1]]
-	
-	
+c=[[],[],[],[]]
+for n in range(len(data)):
+	a=[]
+	for k in range(4):
+		a=a+[r[k][n]]
+	i=a.index(max(a))
+	c[i]=c[i]+[data[n]]
+
+
+circle0= plt.Circle(assign[0],1/math.sqrt(b),color='r',fill=False)
+circle1= plt.Circle(assign[1],1/math.sqrt(b),color='g',fill=False)
+circle2= plt.Circle(assign[2],1/math.sqrt(b),color='y',fill=False)
+circle3= plt.Circle(assign[3],1/math.sqrt(b),color='b',fill=False)
 
 fig, ax=plt.subplots()
-ax.scatter(c0x,c0y,color='r')
-ax.scatter(c1x,c1y,color='g')
-ax.scatter(c2x,c2y,color='b')
-ax.scatter(c3x,c3y,color='y')
+plt.xlim([-0.3,1.3])
+plt.ylim([-0.3,1.3])
+ax.add_artist(circle0)
+ax.add_artist(circle1)
+ax.add_artist(circle2)
+ax.add_artist(circle3)
+
+ax.scatter([x for x,y in c[0]],[y for x,y in c[0]],color='r')
+ax.scatter([x for x,y in c[1]],[y for x,y in c[1]],color='g')
+ax.scatter([x for x,y in c[2]],[y for x,y in c[2]],color='y')
+ax.scatter([x for x,y in c[3]],[y for x,y in c[3]],color='b')
+
+
 plt.show()
 
 

@@ -19,18 +19,18 @@ Here are the data points. I chose random 50 data from the two boxes with 0.5 len
 
 ![Hard K-means clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/hardkmeans.png)
 
-If we set the stiffness of the soft clustering well, we can obtain the following figure.  
+If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster.py) 
  
  
 ![2 clusters](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png)
  
-It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. The code for above 3 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster.py)
+It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/softcluster.py)
 
 ![better 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans2.png)
 
 The enhanced soft K-means allow each cluster to have independent size of the circle. In the figure, two circles vanish and 2 clear clusters remain.  
  
-The radii of the two main circles are about 0.142(red) and 0.149(yellow). The standard deviations of the two clusters are about 0.02 and 0.02. My soft K-means clustering alogrithm gaussian distribution assume Gaussian distribution. And I chose uniformly random data points. The code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)
+The radii of the two main circles are about 0.142(red) and 0.149(yellow). The standard deviations of the two clusters are about 0.02 and 0.02. My soft K-means clustering alogrithm gaussian distribution assume Gaussian distribution. And I chose uniformly random data points. The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)
  
 
 ![better and different 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans3.png)
@@ -40,13 +40,13 @@ If the data are aligned, the circular deviation is not so good. We can split the
 
 ![aligned 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/alignsoftkmeans.png)
 
-The code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/axisaligngaussiansoftkmeans.py)
+The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/axisaligngaussiansoftkmeans.py)
 
 ## Exercise 24.3 of the book. 
 
 In case that the exercise asks some plots or numerical tests, I display plots on this md file. 
 
-Posterior probability distribution function from given data. The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around $\mu=10$. The small bumps around $x_n=(-27,~3.6,~8)$ are also seen in the graph.
+Posterior probability distribution function from given data. The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around mu=10. The small bumps around $x_n=(-27,~3.6,~8)$ are also seen in the graph.
 
 ![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png)
 
@@ -62,4 +62,4 @@ Laplace approximation of Poisson distribution
 
 ![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/laplaceofpoisson.png)
 
-The mathematica file is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/.png)
+The mathematica file is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.1.nb)
