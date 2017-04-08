@@ -19,7 +19,7 @@ Here are the data points. I chose random 50 data from the two boxes with 0.5 len
 
 ![Hard K-means clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/hardkmeans.png)
 
-If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster.py) 
+If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster(new).py) 
  
  
 ![2 clusters](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png)

@@ -17,16 +17,17 @@ import random
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
+import math
 
 N=100
 
 data1=[[0.5+0.5*random.random(),0.5+0.5*random.random()] for i in range(N)]
 data2=[[0.5*random.random(),0.5*random.random()] for i in range(N)]
 	
-data1=np.array(data1)
-data2=np.array(data2)	
+data1=array(data1)
+data2=array(data2)	
 
-data = np.concatenate((data1,data2))
+data = concatenate((data1,data2))
 
 X=c_[data[:,0],data[:,1]]
 
@@ -44,48 +45,48 @@ def findClosestCentroids( X, centroids ):
 	K 	= shape( centroids )[0]
 	m   = shape( X )[0]
 	idx = zeros( (m, 1) )
+	responsibility = zeros( (m, K) )
+	r = responsibility
+	beta = 4
 
 	for i in range(0, m):
 		lowest 		 = 999
 		lowest_index = 0
+		sumofcost = 0
 
 		for k in range( 0, K ):
+			cost = X[i] - centroids[k] 
+			cost = cost.T.dot( cost ) # d(m, x) in the Mackay's book
+			cost = exp(-beta * cost)
+			sumofcost = sumofcost + cost
+		for k in range(0,K):
 			cost = X[i] - centroids[k]
 			cost = cost.T.dot( cost )
-			if cost < lowest:
+			cost = exp(-beta * cost) 
+			responsibility[i][k] = cost / sumofcost
+			
+	
+			if r[i][k] < lowest: 
 				lowest_index = k
-				lowest 		 = cost
+				lowest 		 = r[i][k]
 
 		idx[i] = lowest_index
-	return idx + 1 # add 1, since python's index starts at 0
-	
-def computeCentroidsLoop(X, idx, K):
-	m, n = shape( X )	
-	centroids = zeros((K, n))
 
-	for k in range(1, K+1):
+	return idx+1, r # add 1, since python's index starts at 0
 
-		counter = 0
-		cum_sum = 0
-		for i in range( 0, m ):
-			if idx[i] == k:
-				cum_sum += X[i]
-				counter += 1
-		centroids[k-1] = cum_sum / counter
-	return centroids
 		
-def computeCentroids( X, idx, K ):
+def computeCentroids( X, idxr, K):
 	m, n = shape( X )	
 	centroids = zeros((K, n))
+	idx = idxr[0]
+	r = idxr[1]
 
 	data = c_[X, idx] # append the cluster index to the X
 
 	for k in range( 1, K+1 ):
-		temp 			= data[data[:, n] == k] # quickly extract X that falls into the cluster
-		count 			= shape( temp )[0]		# count number of entries for that cluster
-
+		
 		for j in range( 0, n ):
-			centroids[k-1, j] = sum(temp[:, j]) / count
+			centroids[k-1, j] = sum(r[:, k-1].T.dot(X[:,j]))/sum(r[:,k-1])
 
 	return centroids
 
@@ -95,48 +96,64 @@ def runkMeans( X, initial_centroids, max_iters, plot=False ):
 	idx 		= None
 
 	for iteration in range( 0, max_iters ):
-		idx 		= findClosestCentroids( X, centroids )
-		centroids 	= computeCentroids( X, idx, K )
+		idxr 		= findClosestCentroids( X, centroids )
+		centroids 	= computeCentroids( X, idxr, K )
 	
 		if plot is True:	
-			data = c_[X, idx]
+			data = c_[X, idxr[0]]
+			fig, ax = pyplot.subplots()
 
 			# Extract data that falls in to cluster 1, 2, and 3 respectively, and plot them out
 			data_1 = data[data[:, 2] == 1]
-			pyplot.plot( data_1[:, 0], data_1[:, 1], 'ro', markersize=5 )
+			ax.plot( data_1[:, 0], data_1[:, 1], 'ro', markersize=5 )
 
 			data_2 = data[data[:, 2] == 2]
-			pyplot.plot( data_2[:, 0], data_2[:, 1], 'go', markersize=5 )
+			ax.plot( data_2[:, 0], data_2[:, 1], 'go', markersize=5 )
 
 			data_3 = data[data[:, 2] == 3]
-			pyplot.plot( data_3[:, 0], data_3[:, 1], 'bo', markersize=5 )
+			ax.plot( data_3[:, 0], data_3[:, 1], 'bo', markersize=5 )
 			
 			data_4 = data[data[:, 2] == 4]
-			pyplot.plot( data_4[:, 0], data_4[:, 1], 'yo', markersize=5 )
+			ax.plot( data_4[:, 0], data_4[:, 1], 'yo', markersize=5 )
 			
-			pyplot.plot( centroids[:, 0], centroids[:, 1], 'k*', markersize=14 )
+			ax.plot( centroids[:, 0], centroids[:, 1], 'k*', markersize=14 )
 			
-			pyplot.xlim([-0.1,1.1])
-			pyplot.ylim([-0.1,1.1])
+			pyplot.xlim([-0.3,1.3])
+			pyplot.ylim([-0.3,1.3])
+			
+			beta = 4
+			circle0= pyplot.Circle(centroids[0],1/sqrt(beta),color='r',fill=False)
+			circle1= pyplot.Circle(centroids[1],1/sqrt(beta),color='g',fill=False)
+			circle2= pyplot.Circle(centroids[2],1/sqrt(beta),color='b',fill=False)
+			circle3= pyplot.Circle(centroids[3],1/sqrt(beta),color='y',fill=False)
+			
+			ax.add_artist(circle0)
+			ax.add_artist(circle1)
+			ax.add_artist(circle2)
+			ax.add_artist(circle3)
+			
+			
+			
+			
 
 			pyplot.show( block=True )
 
-	return centroids, idx
+	return centroids, idxr[0]
 
 def kMeansInitCentroids( X, K ):
 	return np.random.permutation( X )[:K]
 
 def part1_1(X, centroids):
 	
-	K 	= 4
+	K 	=  4
 
 	initial_centroids = centroids
 
-	idx = findClosestCentroids( X, initial_centroids )
-	print idx[0:K] # should be [1, 3, 2]
+	idxr = findClosestCentroids( X, initial_centroids )
+	print idxr[1]
 	
 	
-	centroids = computeCentroids( X, idx, K )
+	centroids = computeCentroids( X, idxr, K )
 	print centroids
 	# should be 
 	# [[ 2.428301  3.157924]
@@ -147,7 +164,7 @@ def part1_1(X, centroids):
 def part1_2(X,centroids):
 	K 	= 4
 
-	max_iters = 10
+	max_iters = 20
 	
 	runkMeans( X, centroids, max_iters, plot=True )
 
@@ -156,7 +173,7 @@ def part1_2(X,centroids):
 def part1_3(X,centroids):
 	K 	= 4
 
-	max_iters = 10
+	max_iters = 4
 	print kMeansInitCentroids( X, K ) # it's randomly one of the coordinates from X
 
 
@@ -172,3 +189,4 @@ def main():
 if __name__ == '__main__':
 	main()
 	
+
