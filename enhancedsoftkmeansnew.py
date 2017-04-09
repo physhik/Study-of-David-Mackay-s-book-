@@ -15,14 +15,11 @@ from mpl_toolkits.mplot3d import Axes3D
 
 import random
 import numpy as np
-from numpy import linalg as LA
-import matplotlib.pyplot as plt
-import math
 
 N=100
 
-data1=[[0.5+0.5*random.random(),0.5+0.5*random.random()] for i in range(N)]
-data2=[[0.5*random.random(),0.5*random.random()] for i in range(N)]
+data1=[[0.3+0.6*random.random(),0.3+0.6*random.random()] for i in range(N)]
+data2=[[0.2*random.random(),0.2*random.random()] for i in range(N)]
 	
 data1=array(data1)
 data2=array(data2)	
@@ -41,38 +38,39 @@ def displaydata():
 
 
 
-def findClosestCentroids( X, centroids ):
+def Responsibility( X, centroids , sigma, p ):
 	K 	= shape( centroids )[0]
 	m   = shape( X )[0]
 	idx = zeros( (m, 1) )
 	responsibility = zeros( (m, K) )
 	r = responsibility
-	beta = 8
+	D = 2
 
 	for i in range(0, m):
 		lowest 		 = 999
 		lowest_index = 0
 		sumofcost = 0
+		
 
-		for k in range( 0, K ):
+		for k in range(  K ):
 			cost = X[i] - centroids[k] 
 			cost = 1/2.0*cost.T.dot( cost ) # d(m, x) in the Mackay's book
-			cost = exp(-beta * cost)
+			cost = p[k]/(sigma[k]**D)*exp(- 1/sigma[k]** 2 * cost)
 			sumofcost = sumofcost + cost
-		for k in range(0,K):
+			
+		for k in range( K ):
 			cost = X[i] - centroids[k]
 			cost = 1/2.0*cost.T.dot( cost )
-			cost = exp(-beta * cost) 
-			responsibility[i][k] = cost / sumofcost
-			
+			cost = p[k]/(sigma[k]**D)*exp(- 1/sigma[k]** 2 * cost)
+			r[i, k] = cost / sumofcost
 	
-			if r[i][k] < lowest: 
+			if r[i, k] < lowest: 
 				lowest_index = k
-				lowest 		 = r[i][k]
+				lowest 		 = r[i, k]
 
 		idx[i] = lowest_index
 
-	return idx+1, r # add 1, since python's index starts at 0
+	return idx, r 
 
 		
 def computeCentroids( X, idxr, K):
@@ -83,54 +81,80 @@ def computeCentroids( X, idxr, K):
 
 	data = c_[X, idx] # append the cluster index to the X
 
-	for k in range( 1, K+1 ):
+	for k in range( K ):
 		
 		for j in range( 0, n ):
-			centroids[k-1, j] = sum(r[:, k-1].T.dot(X[:,j]))/sum(r[:,k-1])
+			centroids[k, j] = sum(r[:, k].T.dot(X[:,j]))/sum(r[:,k])
 
 	return centroids
+	
+def SigmaAndPi(X, centroids, idxr , K):
+	D = 2
+	m, n = shape( X )
+	idx, r = idxr
+	sigma = zeros( K )
+	R = ones( K )
+	p = ones( K )
+	
+	for k in range( K ):
+		R[k] = sum(r[:, k])
+		p[k] = R[k] / sum(R)
+		for i in range ( m ):
+			dist = ( X[i] - centroids[k] )
+			sigma[k] = sigma[k] + r[i, k]*dist.T.dot( dist )
+		sigma[k] = sigma[k] / ( D * R[k] )
+			
+	sigma = sqrt(sigma)		
+			
+	return sigma, p 
+	
 
 def runkMeans( X, initial_centroids, max_iters, plot=False ):
 	K 			= shape( initial_centroids )[0]
 	centroids 	= copy( initial_centroids )
-	idx 		= None
+	#idx 		= None
+	initial_sigma = 0.5 * ones( K )
+	sigma = initial_sigma
+	
+	initial_p = 0.5 * ones( K )
+	p = initial_p
 
-	for iteration in range( 0, max_iters ):
-		idxr 		= findClosestCentroids( X, centroids )
+	for iteration in range(  max_iters ):
+		idxr 		= Responsibility( X, centroids , sigma, p)
 		centroids 	= computeCentroids( X, idxr, K )
+		sigma, p = SigmaAndPi(X, centroids, idxr , K)
 	
 		if plot is True:	
 			data = c_[X, idxr[0]]
 			fig, ax = pyplot.subplots()
 
 			# Extract data that falls in to cluster 1, 2, and 3 respectively, and plot them out
-			data_1 = data[data[:, 2] == 1]
+			data_1 = data[data[:, 2] == 0]
 			ax.plot( data_1[:, 0], data_1[:, 1], 'ro', markersize=5 )
 
-			data_2 = data[data[:, 2] == 2]
+			data_2 = data[data[:, 2] == 1]
 			ax.plot( data_2[:, 0], data_2[:, 1], 'go', markersize=5 )
 
-			data_3 = data[data[:, 2] == 3]
-			ax.plot( data_3[:, 0], data_3[:, 1], 'bo', markersize=5 )
+			#data_3 = data[data[:, 2] == 2]
+			#ax.plot( data_3[:, 0], data_3[:, 1], 'bo', markersize=5 )
 			
-			data_4 = data[data[:, 2] == 4]
-			ax.plot( data_4[:, 0], data_4[:, 1], 'yo', markersize=5 )
+			#data_4 = data[data[:, 2] == 3]
+			#ax.plot( data_4[:, 0], data_4[:, 1], 'yo', markersize=5 )
 			
 			ax.plot( centroids[:, 0], centroids[:, 1], 'k*', markersize=14 )
 			
 			pyplot.xlim([-0.3,1.3])
 			pyplot.ylim([-0.3,1.3])
 			
-			beta = 4
-			circle0= pyplot.Circle(centroids[0],1/sqrt(beta),color='r',fill=False)
-			circle1= pyplot.Circle(centroids[1],1/sqrt(beta),color='g',fill=False)
-			circle2= pyplot.Circle(centroids[2],1/sqrt(beta),color='b',fill=False)
-			circle3= pyplot.Circle(centroids[3],1/sqrt(beta),color='y',fill=False)
+			circle0= pyplot.Circle(centroids[0],sigma[0],color='r',fill=False)
+			circle1= pyplot.Circle(centroids[1],sigma[1],color='g',fill=False)
+			#circle2= pyplot.Circle(centroids[2],sigma[2],color='b',fill=False)
+			#circle3= pyplot.Circle(centroids[3],sigma[3],color='y',fill=False)
 			
 			ax.add_artist(circle0)
 			ax.add_artist(circle1)
-			ax.add_artist(circle2)
-			ax.add_artist(circle3)
+			#ax.add_artist(circle2)
+			#ax.add_artist(circle3)
 			
 			
 			
@@ -145,12 +169,17 @@ def kMeansInitCentroids( X, K ):
 
 def part1_1(X, centroids):
 	
-	K 	=  4
+	K 	=  2
 
 	initial_centroids = centroids
+	initial_sigma = 0.5*ones( K )
+	initial_p = 0.5*ones( K )
 
-	idxr = findClosestCentroids( X, initial_centroids )
-	print idxr[1]
+	idxr = Responsibility( X, initial_centroids , initial_sigma, initial_p)
+	
+	sigma, p = SigmaAndPi(X, initial_centroids, idxr , K)
+	
+	print idxr[0]
 	
 	
 	centroids = computeCentroids( X, idxr, K )
@@ -161,26 +190,28 @@ def part1_1(X, centroids):
 	#  [ 7.119387  3.616684]]
 
 
-def part1_2(X,centroids):
-	K 	= 4
+def part1_2(X, centroids):
+	K 	= 2
 
-	max_iters = 20
+	max_iters = 10
+	initial_centroids = centroids
 	
 	runkMeans( X, centroids, max_iters, plot=True )
 
 
 
-def part1_3(X,centroids):
-	K 	= 4
+def part1_3(X, centroids):
+	K 	= 2
 
-	max_iters = 4
+	max_iters = 10
 	print kMeansInitCentroids( X, K ) # it's randomly one of the coordinates from X
 
 
 def main():
 	set_printoptions(precision=6, linewidth=200)
 	displaydata()
-	centroids = array([[random.random(), random.random()], [random.random(), random.random()], [random.random(), random.random()],[random.random(), random.random()]])
+	K = 2
+	centroids = [[random.random(),random.random()] for k in range(K)]
 	part1_1(X,centroids)
 	part1_2(X,centroids)
 	part1_3(X,centroids)
@@ -189,4 +220,5 @@ def main():
 if __name__ == '__main__':
 	main()
 	
+
 
