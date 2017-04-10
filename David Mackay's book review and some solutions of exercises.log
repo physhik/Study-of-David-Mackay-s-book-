@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 APR 2017 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 APR 2017 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -919,47 +919,45 @@ cmr/m/n/10.95 191\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95
 :\OT1/cmr/m/n/10.95 898\OML/cmm/m/it/10.95 ;$
  []
 
-[5] <7scientistplot.pdf, id=94, 361.35pt x 238.8925pt>
-File: 7scientistplot.pdf Graphic file (type pdf)
+[5] <7scientistplot.png, id=94, 361.35pt x 238.8925pt>
+File: 7scientistplot.png Graphic file (type png)
 
-<use 7scientistplot.pdf>
-Package pdftex.def Info: 7scientistplot.pdf used on input line 343.
+<use 7scientistplot.png>
+Package pdftex.def Info: 7scientistplot.png used on input line 343.
 (pdftex.def)             Requested size: 180.0pt x 119.00124pt.
- <7scientistplot2.pdf, id=95, 361.35pt x 231.86626pt>
-File: 7scientistplot2.pdf Graphic file (type pdf)
+ <7scientistplot2.png, id=95, 361.35pt x 237.88875pt>
+File: 7scientistplot2.png Graphic file (type png)
 
-<use 7scientistplot2.pdf>
-Package pdftex.def Info: 7scientistplot2.pdf used on input line 343.
-(pdftex.def)             Requested size: 180.0pt x 115.50119pt.
- [6 <./7scientistplot.pdf> <./7scientistplot2.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./7scientistplot2.pdf): PDF 
-inclusion: multiple pdfs with page group included in a single page
->] <laplace.pdf, id=164, 361.35pt x 230.8625pt>
+<use 7scientistplot2.png>
+Package pdftex.def Info: 7scientistplot2.png used on input line 343.
+(pdftex.def)             Requested size: 180.0pt x 118.50122pt.
+ [6 <./7scientistplot.png (PNG copy)> <./7scientistplot2.png (PNG copy)>] <lapl
+ace.pdf, id=104, 361.35pt x 230.8625pt>
 File: laplace.pdf Graphic file (type pdf)
- <use laplace.pdf>
-Package pdftex.def Info: laplace.pdf used on input line 399.
-(pdftex.def)             Requested size: 180.0pt x 115.00119pt.
 
-<laplace2.pdf, id=165, 361.35pt x 232.87pt>
+<use laplace.pdf>
+Package pdftex.def Info: laplace.pdf used on input line 400.
+(pdftex.def)             Requested size: 180.0pt x 115.00119pt.
+ <laplace2.pdf, id=105, 361.35pt x 232.87pt>
 File: laplace2.pdf Graphic file (type pdf)
- <use laplace2.pdf>
-Package pdftex.def Info: laplace2.pdf used on input line 399.
+
+<use laplace2.pdf>
+Package pdftex.def Info: laplace2.pdf used on input line 400.
 (pdftex.def)             Requested size: 180.0pt x 116.00119pt.
  [7 <./laplace.pdf> <./laplace2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./laplace2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
  (./David Mackay's book review and some solutions of exercises.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
 Package rerunfilecheck Info: File `"David Mackay's book review and some solutio
 ns of exercises".out' has not changed.
 (rerunfilecheck)             Checksum: 7C88C242997C4825527FAA191AA3776E;732.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  )
 (\end occurred inside a group at level 1)
 
@@ -989,10 +987,10 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
 local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on "David Mackay's book review and some solutions of exercises.p
-df" (8 pages, 436858 bytes).
+df" (8 pages, 411290 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
+ 220 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  28 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -338,8 +338,8 @@ $$
 \begin{figure}
 \centerline{
 \begin{tabular}{cc}
-\includegraphics[width=.5\textwidth]{7scientistplot.pdf} &
-\includegraphics[width=.5\textwidth]{7scientistplot2.pdf}
+\includegraphics[width=.5\textwidth]{7scientistplot.png} &
+\includegraphics[width=.5\textwidth]{7scientistplot2.png}
 \end{tabular}}
 \caption[The plot of exercise 24.3]{\label{7scientist} \small The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around $\mu=10$. The small bumps around $x_n=(-27,~3.6,~8)$ are also seen in the graph. }
 \end{figure}
@@ -365,8 +365,8 @@ $r$ is a positive integer, and posterior over lambda
 $$
 P(\lambda|r)= {P(r|\lambda) P(\lambda)\over P(r)}
 $$
-$$\input{cluster(new).py}
 
+$$
 P(r|\lambda)=\exp(\lambda){\lambda^r \over r!}
 $$
 By assumption
@@ -436,11 +436,24 @@ To use Laplace approximation, find $\{\omega_i\}$ satisfy ${\partial \over \part
 
 Some reader might notice that $-\sum_n {(t_n-\omega_0 - \omega_1 x_n)^2 \over 2\sigma^2}$ term is minimized for the linear regression. We have two extra terms from the priors. It is {\it Bayesian linear regression}.  
 
-By the way, $\omega_0^*$ and $\omega_1^*$ satisfy Eq. \ref{blr} is quite complicated. I tried to find the simplified form, but can't. I would just keep symbolic expressions of $\omega_0^*$, $\omega_1^*$. Then, the Laplace approximation is 
+By the way, $\omega_0^*$ and $\omega_1^*$ satisfy Eq. \ref{blr} is quite complicated. I tried to find the simplified form, but can't. I would just keep symbolic expressions of $\omega_0^*$, $\omega_1^*$. 
+
+
+Using the Eq. (27.6) of the book,
+$$
+\vect A={1\over \sigma^2}\left(
+\begin{array}{ccc}
+N+1 & -\sum_n x_n  \\
+  -\sum_n x_n  & (\sum_n x_n)^2 + 1 \\
+\end{array}
+\right)
+$$
+
+
+Then, the Laplace approximation is 
 
 $$
-G(\{\omega_i\}|t_n)=({1 \over 2\pi \sigma^2})^{N+1} \exp \left( -{c_1(t_n-\omega_1^*)^2 \over 2} -{c_2(t_n-\omega_2^*)^2 \over 2} \right)
+G(\{\omega_i\}|t_n)= P(\{\omega_i^*\}|t_n,x_n, \sigma) exp\left(  -{1 \over 2} (\vect \omega - \vect \omega_0)^T \vect A  (\vect \omega - \vect \omega_0)\right)
 $$
-where $c_1=2(N-1)$, $c_2=2(\sum^N_n~x_n) -2$.
-
+where $ \vect \omega  = (\omega_0, \omega_1)$ and $ \vect \omega^*  = (\omega_0^*, \omega_1^*)$
 \end{document}
