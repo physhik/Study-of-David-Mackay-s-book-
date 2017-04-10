@@ -44,9 +44,9 @@ def computeCostLoop(X, y, theta):
     return cumulative_sum
 
 
-def computeCost(X, y, theta):
+def BayescomputeCost(X, y, theta):
     """Compute cost, vectorized version"""
-    sigma = 1
+    sigma = 0.1
     term = hypothesis(X, theta) - y
     # sum( term**2 ) in this case ~= term.T.dot( term )
     return ((term.T.dot(term)+theta.T.dot(theta)) / (2 * sigma**2))[0, 0]
@@ -74,18 +74,21 @@ def gradientDescentLoop(X, y, theta, alpha, iterations):
     return theta
 
 
-def gradientDescent(X, y, theta, alpha, iterations):
-    """Vectorized gradient descent"""
-
-    for counter in range(0, iterations):
-        inner_sum = X.T.dot(hypothesis(X, theta) - y)+ theta
+def BayesgradientDescent(X, y, theta, alpha, iterations):
+	sigma = 0.1
+	for counter in range(0, iterations):
+		inner_sum = X.T.dot(hypothesis(X, theta) - y)+ theta
         theta 	 = theta - alpha / sigma**2 * inner_sum 
 
-    return theta
+	return theta
 
+def LaplaceApprox(X, y, theta, c):
+	1/(2*np.pi*sigma**2)**(N+1)*exp(-c*(theta-y))
+	return laplace
 
 def func():
-	datax= [10*random.random() for i in range(100)]
+	N = 100
+	datax= [10*random.random() for i in range(N)]
 	datax=np.array(datax)
 	v=np.var(datax)
 	linex=np.arange(0,10,0.1)
@@ -102,10 +105,14 @@ def func():
 	X 			= c_[ones((m, 1)), datax] # c_ is useful for concatentation. Add a column of ones to X becomes (m+1,2) shaped
 	theta 		= zeros((2, 1))
 	iterations 	= 2000
-	alpha 		= 0.01
-	cost 	= computeCost(X, t, theta)  # should be 32.07
-	theta 	= gradientDescent(X, t, theta, alpha, iterations)
-	print cost
+	alpha 		= 0.001
+	cost 	= BayescomputeCost(X, t, theta)  # should be 32.07
+	theta 	= BayesgradientDescent(X, t, theta, alpha, iterations)
+	
+	
+	c2=  2*(sum(datax)-1)
+	
+	print datax
 	print theta
 	print w0,w1
 
