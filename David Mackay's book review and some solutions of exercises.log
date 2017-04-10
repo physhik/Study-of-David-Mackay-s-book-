@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 APR 2017 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2017 03:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -948,29 +948,58 @@ Package pdftex.def Info: laplace2.pdf used on input line 400.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./laplace2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
- (./David Mackay's book review and some solutions of exercises.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+>] <Likelihood.png, id=158, 361.35pt x 368.37625pt>
+File: Likelihood.png Graphic file (type png)
+ <use Likelihood.png>
+Package pdftex.def Info: Likelihood.png used on input line 468.
+(pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
+
+<BayesianRegression.png, id=159, 361.35pt x 368.37625pt>
+File: BayesianRegression.png Graphic file (type png)
+
+<use BayesianRegression.png>
+Package pdftex.def Info: BayesianRegression.png used on input line 468.
+(pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
+
+<BayesianRegression2.png, id=160, 361.35pt x 368.37625pt>
+File: BayesianRegression2.png Graphic file (type png)
+
+<use BayesianRegression2.png>
+Package pdftex.def Info: BayesianRegression2.png used on input line 468.
+(pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
+
+<BayesianRegression3.png, id=161, 75.28125pt x 225.84375pt>
+File: BayesianRegression3.png Graphic file (type png)
+
+<use BayesianRegression3.png>
+Package pdftex.def Info: BayesianRegression3.png used on input line 468.
+(pdftex.def)             Requested size: 36.0022pt x 108.0109pt.
+ [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 474.
+ [9 <./Likelihood.png (PNG copy)> <./BayesianRegression.png (PNG copy)> <./Baye
+sianRegression2.png (PNG copy)> <./BayesianRegression3.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 474.
+
+(./David Mackay's book review and some solutions of exercises.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 474.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 474.
 Package rerunfilecheck Info: File `"David Mackay's book review and some solutio
 ns of exercises".out' has not changed.
 (rerunfilecheck)             Checksum: 7C88C242997C4825527FAA191AA3776E;732.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 474.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 133 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28120 strings out of 493089
- 693114 string characters out of 6134842
- 901296 words of memory out of 5000000
- 31048 multiletter control sequences out of 15000+600000
+ 28143 strings out of 493089
+ 693634 string characters out of 6134842
+ 903295 words of memory out of 5000000
+ 31065 multiletter control sequences out of 15000+600000
  19536 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,84p,756b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,84p,950b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
@@ -981,16 +1010,17 @@ mi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib1
 0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on "David Mackay's book review and some solutions of exercises.p
-df" (8 pages, 411290 bytes).
+df" (9 pages, 528499 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

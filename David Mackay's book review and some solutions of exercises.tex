@@ -418,20 +418,20 @@ P(t_n|\sigma_{\nu})= \int^{\infty}_{-\infty} d\omega_0 \int^{\infty}_{-\infty} d
 $$
 
 $$
-P(\{t_n\}|\{\omega_i\},x_n,\sigma_{\nu}) = ({1 \over 2\pi \sigma^2_{\nu}})^{N/2}  \exp\left(-\sum_n {(t_n-y(x_n))^2 \over 2\sigma^2_{\nu}}\right)
+P(\{t_n\}|\{\omega_i\},x_n,\sigma) = ({1 \over 2\pi \sigma^2_{\nu}})^{N/2}  \exp\left(-\sum_n {(t_n-y(x_n))^2 \over 2\sigma^2}\right)
 $$
 $$
 y(x_n)=\omega_0 + \omega_1 x_n
 $$
 $$
-P(\omega_i)=  ({1 \over 2\pi \sigma^2})^{1/2}  \exp\left(-{\omega_i^2 \over 2\sigma^2}\right)
+P(\omega_i)=  ({1 \over 2\pi \sigma^2})^{1/2}  \exp\left(-{\omega_i^2 \over 2\sigma_i^2}\right)
 $$
-Because the mean of $\omega_i$ should be zero obviously, and the variances of $\omega_0$ and $\omega_1$ could be same without loss of generality. The variance of $t_n$ would have a very broad range of values dependent on $x_n$. I choose $\sigma_{\nu} = \sigma$.
+Because the mean of $\omega_i$ should be zero obviously, and the variances of $\omega_0$ and $\omega_1$, i.e. $\sigma_1$, $\sigma_2$ could be same without loss of generality. The variance of $t_n$ would have a very broad range of values dependent on $x_n$. I assumed $\sigma_i^2 = \sigma/3$ at Figure \ref{BayesianRegression}.  
 
 To use Laplace approximation, find $\{\omega_i\}$ satisfy ${\partial \over \partial \omega_i}\log P(\{\omega_i\}|t_n,x_n, \sigma)$. \footnote{Do you have any better suggestion?}
 
 \begin{equation}\label{blr}
-\log P(\{\omega_i\}|t_n,x_n, \sigma) = -\sum_n {(t_n-\omega_0 - \omega_1 x_n)^2 \over 2\sigma^2}-{\omega_0^2 \over 2\sigma^2}-{\omega_1^2 \over 2\sigma^2}
+\log P(\{\omega_i\}|t_n,x_n, \sigma) = -\left(\sum_n {(t_n-\omega_0 - \omega_1 x_n)^2 \over 2\sigma^2}\right)-{\omega_0^2 \over 2\sigma_0^2}-{\omega_1^2 \over 2\sigma_1^2}
 \end{equation}
 
 Some reader might notice that $-\sum_n {(t_n-\omega_0 - \omega_1 x_n)^2 \over 2\sigma^2}$ term is minimized for the linear regression. We have two extra terms from the priors. It is {\it Bayesian linear regression}.  
@@ -456,4 +456,19 @@ $$
 G(\{\omega_i\}|t_n)= P(\{\omega_i^*\}|t_n,x_n, \sigma) exp\left(  -{1 \over 2} (\vect \omega - \vect \omega_0)^T \vect A  (\vect \omega - \vect \omega_0)\right)
 $$
 where $ \vect \omega  = (\omega_0, \omega_1)$ and $ \vect \omega^*  = (\omega_0^*, \omega_1^*)$
+
+
+\begin{figure}
+\centerline{
+\begin{tabular}{cccc}
+\includegraphics[width=.4\textwidth]{Likelihood.png} &
+\includegraphics[width=.4\textwidth]{BayesianRegression.png} &
+\includegraphics[width=.4\textwidth]{BayesianRegression2.png}&
+\includegraphics[width=0.1\textwidth]{BayesianRegression3.png}
+\end{tabular}}
+\caption[The plot of exercise 27.3]{\label{BayesianRegression} \small The likelihood and posterior probability distribution plot and its Laplace approximation. I have put 10 random data points $x_n$ and $t_n ~ 3x_n+2 \pm 2$. The left plot has the maximum likelihood around $(\omega_0, \omega_2) = (1.79794, 3.02217)$, and the central posterior is about $(\omega_0, \omega_2) = (0.812961, 3.16977)$. The discrepancy occurs by the assumed priors. Because the mean of $\omega_i$ should be zero obviously, and the variances of $\omega_0$ and $\omega_1$, i.e. $\sigma_1$, $\sigma_2$ could be same without loss of generality. The variance of $t_n$ would have a very broad range of values dependent on $x_n$. I assumed $\sigma_i^2 = \sigma/3$. It is chosen from base of the mean value of $x_n$. The last one is obtained by Laplace approximation. I did not normalize them.}
+\end{figure}
+
+
+
 \end{document}

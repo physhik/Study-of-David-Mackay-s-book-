@@ -4,7 +4,7 @@ In this repository, I put the materials for studying David Mackay's [book](http:
 
 In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
 
-I also solved some of challenging exercises in the book, and included in the Latex file. There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests from the algorithms on this md files. 
+I also solved some of challenging exercises in the book, and included in the LateX file. If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests from the algorithms on this md files. 
 
 ## Spectral Clustering (Soft K-means)
 
@@ -52,7 +52,7 @@ Posterior probability distribution function from given data. The distribution fu
 
 ![Posterior probability distribution function from given data around x=-27](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png)
 
-The mathematica file is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/Exercise24.3.nb)
+The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/Exercise24.3mathematica.nb)
 
 
 ## Exercise 27.1 of the book. 
@@ -62,4 +62,10 @@ Laplace approximation of Poisson distribution
 
 ![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/laplaceofpoisson.png)
 
-The mathematica file is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.1.nb)
+The mathematica analyis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.1mathematica.nb)
+
+## Exercise 27.3 of the book
+
+![Likelihood and Bayesian Regression](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/LikelihoodAndBayesianRegression.png)
+
+The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.3mathematica.nb)
