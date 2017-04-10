@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2017 03:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2017 15:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -914,45 +914,41 @@ Package amsmath Warning: Foreign command \over;
 bility_formulae.png>] [2] [3] [4]
 Overfull \hbox (11.3753pt too wide) in paragraph at lines 309--312
 \OT1/cmr/m/n/10.95 tributes very tiny in $\OML/cmm/m/it/10.95 ^^V$\OT1/cmr/m/n/
-10.95 . Then, the mean should be close to mean  $(8\OML/cmm/m/it/10.95 :\OT1/
+10.95 . Then, the mean should be close to mean of $(8\OML/cmm/m/it/10.95 :\OT1/
 cmr/m/n/10.95 191\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95 
 :\OT1/cmr/m/n/10.95 898\OML/cmm/m/it/10.95 ;$
  []
 
-[5] <7scientistplot.png, id=55, 361.35pt x 238.8925pt>
+[5] <7scientistplot.png, id=94, 361.35pt x 238.8925pt>
 File: 7scientistplot.png Graphic file (type png)
 
 <use 7scientistplot.png>
 Package pdftex.def Info: 7scientistplot.png used on input line 343.
 (pdftex.def)             Requested size: 180.0pt x 119.00124pt.
- <7scientistplot2.png, id=56, 361.35pt x 237.88875pt>
+ <7scientistplot2.png, id=95, 361.35pt x 237.88875pt>
 File: 7scientistplot2.png Graphic file (type png)
 
 <use 7scientistplot2.png>
 Package pdftex.def Info: 7scientistplot2.png used on input line 343.
 (pdftex.def)             Requested size: 180.0pt x 118.50122pt.
- (./cluster(new).py
-./cluster(new).py:1: You can't use `macro parameter character #' in display mat
-h mode.
-l.1 #
-     !/usr/local/Cellar/python/2.7.6/bin/python
-? 
-./cluster(new).py:1: Emergency stop.
-l.1 #
-     !/usr/local/Cellar/python/2.7.6/bin/python
-End of file on the terminal!
+ [6 <./7scientistplot.png (PNG copy)> <./7scientistplot2.png (PNG copy)>] <lapl
+ace.pdf, id=104, 361.35pt x 230.8625pt>
+File: laplace.pdf Graphic file (type pdf)
 
- 
-Here is how much of TeX's memory you used:
- 28082 strings out of 493089
- 692549 string characters out of 6134842
- 901296 words of memory out of 5000000
- 31022 multiletter control sequences out of 15000+600000
- 19536 words of font info for 72 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 55i,12n,84p,756b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-./cluster(new).py:1:  ==> Fatal error occurred, no output PDF file produced!
-368.37625pt>
+<use laplace.pdf>
+Package pdftex.def Info: laplace.pdf used on input line 400.
+(pdftex.def)             Requested size: 180.0pt x 115.00119pt.
+ <laplace2.pdf, id=105, 361.35pt x 232.87pt>
+File: laplace2.pdf Graphic file (type pdf)
+
+<use laplace2.pdf>
+Package pdftex.def Info: laplace2.pdf used on input line 400.
+(pdftex.def)             Requested size: 180.0pt x 116.00119pt.
+ [7 <./laplace.pdf> <./laplace2.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./laplace2.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>] <Likelihood.png, id=158, 361.35pt x 368.37625pt>
 File: Likelihood.png Graphic file (type png)
  <use Likelihood.png>
 Package pdftex.def Info: Likelihood.png used on input line 468.
@@ -999,7 +995,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 474.
 Here is how much of TeX's memory you used:
  28143 strings out of 493089
  693634 string characters out of 6134842
- 903295 words of memory out of 5000000
+ 903296 words of memory out of 5000000
  31065 multiletter control sequences out of 15000+600000
  19536 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
