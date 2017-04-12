@@ -360,7 +360,8 @@ $$
 
 \section{Monte Carlo }
 
-\subsection{Exercise 27.1}
+\subsection{Laplace approximation}
+\subsubsection{Exercise 27.1}
 $r$ is a positive integer, and posterior over lambda
 $$
 P(\lambda|r)= {P(r|\lambda) P(\lambda)\over P(r)}
@@ -404,7 +405,7 @@ $$
 }
 \end{figure}
 
-\subsection{Exercise 27.3}
+\subsubsection{Exercise 27.3}
 
 Bayesian for posterior of $\omega_0, \omega_1$. $y(x_n)$ is the mean of $t_n$ data points. 
 
@@ -470,5 +471,82 @@ where $ \vect \omega  = (\omega_0, \omega_1)$ and $ \vect \omega^*  = (\omega_0^
 \end{figure}
 
 
+\subsection{Occam's razor}
+
+This section is very well summarized at the figures of the book. Occam's factor is defined in the process of model comparison. The Occam's factor ${\sigma_{\omega|D}\over \sigma_{\omega}}$ is equal to the ratio of the posterior accessible volume of $\mathcal{H}_i$'s parameter space to the prior accessible volume, or the factor by which $\mathcal{H}_i$'s hypothesis space collapses when the data arrive. The factor is smaller as the model is simple. The logarithm of the Occam factor is a measure of the amount ofinformation we gain about the model's parameters when the data arrive.
+
+{\it Occam factor for several parameters}
+If the posterior is well approximated by a Gaussian, then the Occam factoris obtained from the determinant of the corresponding covariance matrix (cf.equation (28.8) and Chapter 27):
+
+$$
+P(D|\mathcal{H}_i) \sim P(D|\vect w_{MP}, \mathcal{H}_i) \times P(\vect w_{MP}| \mathcal{H}_i) \det (\vect A/2\pi)^{-1/2}
+$$ 
+$~~~~~~~~~~~$Evidence $\sim$ Best fit likelihood $\times$ Occam factor
+
+where $\vect A = -\Delta \Delta \log P(D|\vect w_{MP}, \mathcal{H}_i)$. Bayesian model comparison is a simple extension of maximum likelihood model selection: the evidence is obtained by multiplying the best-fit likelihood by the Occam factor. To evaluate the Occam factor we need only the Hessian $\vect A$, if the Gaussianapproximation is good. Thus the Bayesian method of model comparison byevaluating the evidence is no more computationally demanding than the taskof finding for each model the best-fit parameters and their error bars.
+
+
+\subsubsection{Exercise 28.1}
+
+For given $x= 0.3,0.5,0.7,0.8,0.9$, which hypothesis would be more probable? By intuition, $\mathcal{H}_0$, because the data looks rather uniformly distributed. 
+
+$P(D|\mathcal{H}_0)$ is ${1 \over 2}\times {1 \over 2} \times{1 \over 2} \times{1 \over 2}\times {1 \over 2}  = 0.03125$ since the probability distribution is uniform. 
+
+$P(D|\mathcal{H}_1)$ is a product of ${1 \over 2} (1- 0.4 x)$ for $x= 0.3,0.5,0.7,0.8,0.9$. It is about $0.00689357$. The ratio ${P(D|\mathcal{H}_0) \over P(D|\mathcal{H}_1)} \sim 4.53321$. $P(D|\mathcal{H}_0)$ is 4.5 times more probable. 
+
+\subsubsection{Exercise 28.2}
+
+Look at the data points plot. 
+
+\begin{figure}[h!]
+\centerline{
+\includegraphics[width=.7\textwidth]{datapointsExercise28-2.png}}
+ \caption[The plot of exercise 28.2-1]{\label{Exercise28-2-1} \small }
+\end{figure}
+
+The best fit would be almost flat but the slope is not zero, and the y-intersection would be around 10. Which hypothesis is more probable by your intuition? 
+
+
+The given data points,D= (x, t)= \{(-8, 8), (-2, 10), (6, 11)\};
+The evidence is  
+
+{\small 
+$$
+P(D|\sigma_{\nu}, \sigma_{\omega_0},\sigma_{\omega_1},\mathcal{H}_i) = \int^{\infty}_{-\infty} d\omega_0 \int^{\infty}_{-\infty} d\omega_1 P(D|\omega_0, \omega_1,\sigma_{\nu}, \mathcal{H}_i) P(\omega_0| \sigma_{\omega_0},\sigma_{\omega_1},\mathcal{H}_i)P(\omega_1| \sigma_{\omega_0},\sigma_{\omega_1},\mathcal{H}_i)
+$$ }
+
+For $\mathcal{H}_2$,
+{\tiny
+$$
+P(D|\sigma_{\nu}, \sigma_{\omega_0},\sigma_{\omega_1},\mathcal{H}_2) = \int^{\infty}_{-\infty} d\omega_0 \int^{\infty}_{-\infty} d\omega_1 
+{1\over \sqrt{2\pi }\sigma_{\nu}} 
+\exp\left(-{(\omega_0+\omega_1 x - t)^2\over 2\sigma^2_{\nu}}\right){1\over \sqrt{2\pi }\sigma_{\omega_0}} 
+\exp\left(-{(\omega_0-\mu_{\omega_0})^2\over 2\sigma^2_{{\omega_0}}}\right){1\over \sqrt{2\pi }\sigma_{\omega_1}} 
+\exp\left(-{(\omega_1-\mu_{\omega_1})^2\over 2\sigma^2_{{\omega_1}}}\right)
+$$ }
+
+Then, the evidence for $\mathcal{H}_2$ with respect to 3 data points are about $0.0302393, ~0.0000391484, ~0.0131697$ for each. The total evidence is about $1.55905 \times 10^{-8}$.
+
+
+
+For $\mathcal{H}_1$, $\omega_1 =0$ is fixed, so we do not have related term. 
+{\small $$
+P(D|\sigma_{\nu}, \sigma_{\omega_0},\sigma_{\omega_1},\mathcal{H}_1) = \int^{\infty}_{-\infty} d\omega_0 \int^{\infty}_{-\infty} d\omega_1 
+{1\over \sqrt{2\pi }\sigma_{\nu}} 
+\exp\left(-{(\omega_0+\omega_1 x - t)^2\over 2\sigma^2_{\nu}}\right){1\over \sqrt{2\pi }\sigma_{\omega_0}} 
+\exp\left(-{(\omega_0-\mu_{\omega_0})^2\over 2\sigma^2_{{\omega_0}}}\right)
+$$ }
+
+The evidence for $\mathcal{H}_1$ with respect to 3 data points are about $3.17456 \times 10^{-8},~3.91772 \times 10^{-12},~2.05583 \times 10^{-14}$ for each. The total evidence is about $2.55684 \times 10^{-33}$.
+
+Therefore, the horizontal line has much smaller evidence, and it agrees with the intuition. 
+
+
 
 \end{document}
+
+
+
+
+
+
