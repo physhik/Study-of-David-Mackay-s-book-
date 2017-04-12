@@ -1,0 +1,207 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5082,        198]
+NotebookOptionsPosition[      3937,        151]
+NotebookOutlinePosition[      4290,        167]
+CellTagsIndexPosition[      4247,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Data", "Subchapter",
+ CellChangeTimes->{{3.700904619738276*^9, 3.700904633363522*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"0.3", ",", "0.5", ",", "0.7", ",", "0.8", ",", "0.9"}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.700904581651329*^9, 3.700904613663341*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.3`", ",", "0.5`", ",", "0.7`", ",", "0.8`", ",", "0.9`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7009046154901323`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "P(D|",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "0"], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subchapter",
+ CellChangeTimes->{{3.700904619738276*^9, 3.700904688729447*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox["1", "2"], ")"}], "5"]], "Input",
+ CellChangeTimes->{{3.700904262125477*^9, 3.700904267148718*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "32"], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7009043816191177`*^9, 3.700904382081932*^9}}],
+
+Cell[BoxData["0.03125`"], "Output",
+ CellChangeTimes->{3.70090438247132*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "P(D|",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "1"], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subchapter",
+ CellChangeTimes->{{3.700904619738276*^9, 3.700904633363522*^9}, {
+  3.700904683004903*^9, 3.700904686753634*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"L", "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"0.4", "x"}]}], ")"}]}], "/.", 
+   RowBox[{"x", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0.3", ",", "0.5", ",", "0.7", ",", "0.8", ",", "0.9"}], 
+     "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.700904273082844*^9, 3.700904352579175*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.44`", ",", "0.4`", ",", "0.36`", ",", "0.33999999999999997`", ",", 
+   "0.31999999999999995`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.700904331347925*^9, 3.700904353079082*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Product", "[", 
+  RowBox[{
+   RowBox[{"L", "[", 
+    RowBox[{"[", "i", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7009043567864943`*^9, 3.7009043782827997`*^9}}],
+
+Cell[BoxData["0.006893567999999998`"], "Output",
+ CellChangeTimes->{3.7009043786013193`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The ratio ", "Subchapter",
+ CellChangeTimes->{{3.700904619738276*^9, 3.700904633363522*^9}, {
+  3.700904693923473*^9, 3.700904696924654*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.03125`", "/", "0.006893567999999998`"}]], "Input",
+ CellChangeTimes->{{3.700904527140066*^9, 3.7009045327352533`*^9}}],
+
+Cell[BoxData["4.533211248514559`"], "Output",
+ CellChangeTimes->{3.700904533123782*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"The", " ", 
+  SubscriptBox["H", "0"], "seems", " ", "4.5", " ", "times", " ", "better", 
+  " ", "than", " ", 
+  SubscriptBox["H", 
+   RowBox[{"1", " "}]]}]], "Subsubsection",
+ CellChangeTimes->{{3.700904704738637*^9, 3.700904718236034*^9}, {
+  3.700904860724826*^9, 3.70090488819685*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 698},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 92, 1, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[697, 27, 219, 5, 28, "Input"],
+Cell[919, 34, 165, 4, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1133, 44, 233, 8, 62, "Subchapter"],
+Cell[1369, 54, 161, 4, 48, "Input"],
+Cell[CellGroupData[{
+Cell[1555, 62, 140, 3, 49, InheritFromParent],
+Cell[1698, 67, 76, 1, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1823, 74, 282, 9, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[2130, 87, 383, 12, 48, "Input"],
+Cell[2516, 101, 225, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2778, 111, 266, 7, 28, "Input"],
+Cell[3047, 120, 92, 1, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3188, 127, 147, 2, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[3360, 133, 144, 2, 28, "Input"],
+Cell[3507, 137, 87, 1, 28, "Output"]
+}, Open  ]],
+Cell[3609, 141, 312, 7, 33, "Subsubsection"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
