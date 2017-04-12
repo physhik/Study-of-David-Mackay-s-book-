@@ -317,7 +317,7 @@ The setting is same as the exercise 22.15.
 
 Bayesian for posterior probability of $\sigma_n$ is 
 $$
-P(\sigma_n|\{x_n\},\mu)= {P(\{x_n\}|\sigma_n,\mu) P(\sigma_n|\mu)\over P(\{x_n\}|\mu)}
+P(\sigma_n|\{x_n\},\mu)= {P(\{x_n\}|\sigma_n,\mu) P(\sigma_n)\over P(\{x_n\}|\mu)}
 $$
 Given
 $$
@@ -325,13 +325,13 @@ P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \left( \Pi_n{1\over \sigma_n }
 $$ 
 and
 $$
-P(\sigma_n|\mu)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\sum_n \sigma_n \over s})\footnote{not sure if it is right.}
+P(\sigma_n)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\sum_n \sigma_n \over s})\footnote{not sure if it is right.}
 $$
 where $(s,~c)=(10,0.1)$.
 
 and the normalizing constant is
 $$
-P(\{x_n\}|\mu)=\int^{\infty}_0~\Pi_n~d\sigma_n ~P(\{x_n\}|\sigma_n,\mu) P(\sigma_n|\mu)
+P(\{x_n\}|\mu)=\int^{\infty}_0~\Pi_n~d\sigma_n ~P(\{x_n\}|\sigma_n,\mu) P(\sigma_n)
 $$
 
 
@@ -473,17 +473,23 @@ where $ \vect \omega  = (\omega_0, \omega_1)$ and $ \vect \omega^*  = (\omega_0^
 
 \subsection{Occam's razor}
 
-This section is very well summarized at the figures of the book. Occam's factor is defined in the process of model comparison. The Occam's factor ${\sigma_{\omega|D}\over \sigma_{\omega}}$ is equal to the ratio of the posterior accessible volume of $\mathcal{H}_i$'s parameter space to the prior accessible volume, or the factor by which $\mathcal{H}_i$'s hypothesis space collapses when the data arrive. The factor is smaller as the model is simple. The logarithm of the Occam factor is a measure of the amount ofinformation we gain about the model's parameters when the data arrive.
+This section is very well summarized at the figures of the book. Occam's factor is defined in the process of model comparison. The Occam's factor ${\sigma_{\omega|D}\over \sigma_{\omega}}$ is equal to the ratio of the posterior accessible volume of $\mathcal{H}_i$'s parameter space to the prior accessible volume, or the factor by which $\mathcal{H}_i$'s hypothesis space collapses when the data arrive. The factor is smaller as the model is simple. The logarithm of the Occam factor is a measure of the amount of
+information we gain about the model's parameters when the data arrive.
 
 {\it Occam factor for several parameters}
-If the posterior is well approximated by a Gaussian, then the Occam factoris obtained from the determinant of the corresponding covariance matrix (cf.equation (28.8) and Chapter 27):
+If the posterior is well approximated by a Gaussian, then the Occam factor
+is obtained from the determinant of the corresponding covariance matrix (cf.
+equation (28.8) and Chapter 27):
 
 $$
 P(D|\mathcal{H}_i) \sim P(D|\vect w_{MP}, \mathcal{H}_i) \times P(\vect w_{MP}| \mathcal{H}_i) \det (\vect A/2\pi)^{-1/2}
 $$ 
 $~~~~~~~~~~~$Evidence $\sim$ Best fit likelihood $\times$ Occam factor
 
-where $\vect A = -\Delta \Delta \log P(D|\vect w_{MP}, \mathcal{H}_i)$. Bayesian model comparison is a simple extension of maximum likelihood model selection: the evidence is obtained by multiplying the best-fit likelihood by the Occam factor. To evaluate the Occam factor we need only the Hessian $\vect A$, if the Gaussianapproximation is good. Thus the Bayesian method of model comparison byevaluating the evidence is no more computationally demanding than the taskof finding for each model the best-fit parameters and their error bars.
+where $\vect A = -\Delta \Delta \log P(D|\vect w_{MP}, \mathcal{H}_i)$. Bayesian model comparison is a simple extension of maximum likelihood model selection: the evidence is obtained by multiplying the best-fit likelihood by the Occam factor. To evaluate the Occam factor we need only the Hessian $\vect A$, if the Gaussian
+approximation is good. Thus the Bayesian method of model comparison by
+evaluating the evidence is no more computationally demanding than the task
+of finding for each model the best-fit parameters and their error bars.
 
 
 \subsubsection{Exercise 28.1}
