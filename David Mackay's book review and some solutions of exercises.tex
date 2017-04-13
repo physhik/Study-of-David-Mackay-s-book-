@@ -111,14 +111,16 @@
 
 \begin{document} 
 
-\section{intro}
-\subsection{some formula}
+In this note, I review \href{http://www.inference.phy.cam.ac.uk/mackay/itila/}{the book of David Mackay}, and solve some challenging exercises in the book. To review and summarize the book, I quote or copy and paste the sentences of the book without approval of the author of the book. I do not use this note with the purpose of financial profit. You can find the materials for this note from \href{https://github.com/physhik/Study-of-David-Mackay-s-book-}{my github}, such as Mathematica notes, their pdf copies and some relevant python codes. 
+
+\section{Introduction}
+\subsection{Some formula in the chapter 1 of the book}
 \begin{figure}[h!]
 \centerline{\includegraphics[scale=0.6]{probability_formulae.png}}
 \caption{Some formula}
 \end{figure}
 
-\subsection{assumptions in inference}
+\subsection{Assumptions in inference}
 
 First, once assumptions are made, the inferences are objective and unique,
 reproducible with complete agreement by anyone who has the same information
@@ -325,8 +327,7 @@ P(\{x_n\}|\sigma_n,\mu) = ({1 \over 2\pi })^{N/2} \left( \Pi_n{1\over \sigma_n }
 $$ 
 and
 $$
-P(\sigma_n)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\sum_n \sigma_n \over s})\footnote{not sure if it is right.}
-$$
+P(\sigma_n)=({1\over \Gamma(c)~s^c})^N\Pi_n~(\sigma_n)^{c-1}~\exp({\sum_n \sigma_n \over s})$$
 where $(s,~c)=(10,0.1)$.
 
 and the normalizing constant is
@@ -358,7 +359,7 @@ $$
 
 
 
-\section{Monte Carlo }
+\section{Gaussian approximation and model comparison}
 
 \subsection{Laplace approximation}
 \subsubsection{Exercise 27.1}
@@ -410,7 +411,7 @@ $$
 Bayesian for posterior of $\omega_0, \omega_1$. $y(x_n)$ is the mean of $t_n$ data points. 
 
 $$
-P(\{\omega_i\}|t_n,x_n, \sigma_{\nu})= { P(t_n|\{\omega_i\},x_n,\sigma_{\nu})P(\omega_0)P(\omega_1)\over P(t_n|x_n\sigma_{\nu})}\footnote{not sure if it is correct yet. I am still confused at Bayesian theory.}
+P(\{\omega_i\}|t_n,x_n, \sigma_{\nu})= { P(t_n|\{\omega_i\},x_n,\sigma_{\nu})P(\omega_0)P(\omega_1)\over P(t_n|x_n,\sigma_{\nu})}
 $$
 $P(t_n|\{\omega_i\},\sigma_{\nu})$, $P(\omega_0)$, $P(\omega_1)$ are all Gaussian distributed. Prior $P(\omega_0)$, $P(\omega_1)$ are assumed to be Gaussian. 
 
@@ -547,6 +548,20 @@ The evidence for $\mathcal{H}_1$ with respect to 3 data points are about $3.1745
 
 Therefore, the horizontal line has much smaller evidence, and it agrees with the intuition. 
 
+
+\section{Monte Carlo method}
+Where the likelihood function
+is multimodal, and has nasty unboundedly-high spikes in certain locations in
+the parameter space; so maximizing the posterior probability and fitting a
+Gaussian is not always going to work. This difficulty with Laplace's method is
+one motivation for being interested in Monte Carlo methods. In fact, Monte
+Carlo methods provide a general-purpose set of tools with applications in
+Bayesian data modelling and many other fields.
+
+The book uses the word {\it sample} in the following sense: a sample
+from a distribution $P(\vect x)$ is a single realization $\vect x$ whose probability distribution
+is $P(\vect x)$. This contrasts with the alternative usage in statistics, where {\it sample}
+refers to a collection of realizations $\{\vect x\}$.
 
 
 \end{document}
