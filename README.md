@@ -73,7 +73,7 @@ The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mac
 
 ## Rejection Monte Carlo method 
 
-![Likelihood and Bayesian Regression](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectMC.png)
+![Likelihood and Bayesian Regression](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.png)
 
 The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMCmathematica.pdf)
 
