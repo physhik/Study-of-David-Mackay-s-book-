@@ -4,9 +4,11 @@ In this repository, I put the materials for studying David Mackay's [book](http:
 
 In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
 
-I also solved some of challenging exercises in the book, and included in the LateX file. If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests from the algorithms on this md files. 
+I also solved some of challenging exercises in the book, and included in the LateX file. If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests http://markdowntutorial.com/lesson/7from the algorithms on this md files. 
 
 ## Spectral Clustering (Soft K-means)
+
+#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
 
 I felt there's no good python tutorial for spectral clustering.   
 
@@ -19,7 +21,7 @@ Here are the data points. I chose random 50 data from the two boxes with 0.5 len
 
 ![Hard K-means clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/hardkmeans.png)
 
-If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/cluster(new).py) 
+If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/clusternew.py) 
  
  
 ![2 clusters](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png)
@@ -71,7 +73,9 @@ The mathematica analyis is [here](https://github.com/physhik/Study-of-David-Mack
 The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.3mathematica.pdf)
 
 
-## Rejection Monte Carlo method 
+## Rejection sampling Monte Carlo method 
+
+#### [ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
 
 ![RejectSamplingMC mathematica](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.png)
 
@@ -81,3 +85,7 @@ The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mac
 
 The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.py)
 
+
+## Importance sampling
+
+#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb) 
