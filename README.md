@@ -8,7 +8,7 @@ I also solved some of challenging exercises in the book, and included in the Lat
 
 ## Spectral Clustering (Soft K-means)
 
-#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
+### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
 
 I felt there's no good python tutorial for spectral clustering.   
 
@@ -75,7 +75,7 @@ The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mac
 
 ## Rejection sampling Monte Carlo method 
 
-#### [ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
+### [ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
 
 ![RejectSamplingMC mathematica](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.png)
 
@@ -88,4 +88,4 @@ The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-boo
 
 ## Importance sampling
 
-#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb) 
+### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb) 
