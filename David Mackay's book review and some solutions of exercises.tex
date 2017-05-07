@@ -563,11 +563,14 @@ from a distribution $P(\vect x)$ is a single realization $\vect x$ whose probabi
 is $P(\vect x)$. This contrasts with the alternative usage in statistics, where {\it sample}
 refers to a collection of realizations $\{\vect x\}$.
 
-The aims of Monte Carlo methods are to solve one or both of thefollowing problems.
+The aims of Monte Carlo methods are to solve one or both of the
+following problems.
 
-\vect{Problem 1}: to generate samples $\{x^{(r)}\}^R_{r=1}$ from a given probability distribution$P(x)$.
+\vect{Problem 1}: to generate samples $\{x^{(r)}\}^R_{r=1}$ from a given probability distribution
+$P(x)$.
 
-\vect{Problem 2}: to estimate expectations of functions under this distribution, forexample
+\vect{Problem 2}: to estimate expectations of functions under this distribution, for
+example
 
 $$
 \Phi = \int d^N \vect x P(\vect x) \phi(\vect x)
@@ -589,8 +592,24 @@ We can evaluate $P^*(\vect x)$.
 $$
 P(\vect x)=P^*(\vect x)/Z
 $$
-We do not know $Z$. Secondly, even if we did know $Z$, the problem of drawing samplesfrom $P(\vect x)$ is still a challenging one, especially in high-dimensional spaces,because there is no obvious way to sample from $P$ without enumerating mostor all of the possible states. Correct samples from $P$ will by definition tendto come from places in $\vect x$-space where $P(\vect x)$ is big; how can we identify thoseplaces where $P(\vect x)$ is big, without evaluating $P(\vect x)$ everywhere? There are onlya few high-dimensional densities from which it is easy to draw samples, forexample the Gaussian distribution.
+We do not know $Z$. Secondly, even if we did know $Z$, the problem of drawing samples
+from $P(\vect x)$ is still a challenging one, especially in high-dimensional spaces,
+because there is no obvious way to sample from $P$ without enumerating most
+or all of the possible states. Correct samples from $P$ will by definition tend
+to come from places in $\vect x$-space where $P(\vect x)$ is big; how can we identify those
+places where $P(\vect x)$ is big, without evaluating $P(\vect x)$ everywhere? There are only
+a few high-dimensional densities from which it is easy to draw samples, for
+example the Gaussian distribution.
 
+
+\subsection{Exercise 29.3}
+Problem : Consider a one-dimensional random walk, on each step of
+which the state moves randomly to the left or to the right with equal
+probability. Show that after N steps of size a, the state is likely to have
+moved only a distance about $\sqrt{N}a$. (Compute the root mean square
+distance travelled.)
+
+Answer : Consider only right steps. p = 1/2. Then the average distance is Npa = Na/2 and the deviation is $\sqrt{Np(1-p)}a = \sqrt{N}a/2$. TWhile consider the left step as well, the average is 0, and the deviation is between $\sqrt{N}a$ and zero. 
 
 \end{document}
 
