@@ -603,13 +603,47 @@ example the Gaussian distribution.
 
 
 \subsection{Exercise 29.3}
+
 Problem : Consider a one-dimensional random walk, on each step of
 which the state moves randomly to the left or to the right with equal
 probability. Show that after N steps of size a, the state is likely to have
 moved only a distance about $\sqrt{N}a$. (Compute the root mean square
 distance travelled.)
 
-Answer : Consider only right steps. p = 1/2. Then the average distance is Npa = Na/2 and the deviation is $\sqrt{Np(1-p)}a = \sqrt{N}a/2$. TWhile consider the left step as well, the average is 0, and the deviation is between $\sqrt{N}a$ and zero. 
+Answer : Consider only right steps. p = 1/2. Then the average distance is $N~p~a = N~a/2$ and the deviation is $\sqrt{Np(1-p)}a = \sqrt{N}a/2$. While consider the left step as well, the average is 0, and the deviation is between $\sqrt{N}a$ and zero. 
+
+\subsection{Rejection sampling}
+
+We assume
+that we have a simpler proposal density $Q(x)$ which we can evaluate (within a
+multiplicative factor $Z_Q$, as before), and from which we can generate samples.
+We further assume that we know the value of a constant $c$ such that
+$$
+c Q^*(x) > P^*(x),~for~all~x.
+$$
+
+We generate two random numbers. The first, $x$, is generated from the
+proposal density $Q(x)$. We then evaluate $cQ^*(x)$ and generate a uniformly
+distributed random variable $u$ from the interval $[0, cQ^*(x)]$. These two random
+numbers can be viewed as selecting a point in the two-dimensional plane.
+
+We now evaluate $P^*(x)$ and accept or reject the sample x by comparing the
+value of u with the value of $P^*(x)$. If $u > P^*(x)$ then $x$ is rejected; otherwise
+it is accepted, which means that we add $x$ to our set of samples $\{x^{(r)}\}$. The
+value of $u$ is discarded.
+
+\href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb}{\vect{The reject sampling ipython notebook}} present the python code of the sampling. The bald is linked to ipython notebook in the GitHub. In the example, $Q^*(x)$ is trivially given as a constant, and $P^*(x)$ is given as a specific function.  
+
+\begin{figure}[h!]
+\centerline{\includegraphics[scale=0.4]{rejectSampling.png}}
+\caption{Reject sampling. $cQ^*(x)$ is a constant which is a maximum value of the function, $P^*(x)$. }\label{rejectsampling}
+\end{figure}
+
+Theacceptance rate is the ratio of the volume under the curve $P(x)$ to the volumeunder $cQ(x)$, the fact that $P$ and $Q$ are both normalized here implies thatthe acceptance rate will be $1/c$.
+
+
+\subsection{The Metropolis-Hastings method}
+
 
 \end{document}
 
