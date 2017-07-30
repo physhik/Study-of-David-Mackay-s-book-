@@ -639,12 +639,181 @@ value of $u$ is discarded.
 \caption{Reject sampling. $cQ^*(x)$ is a constant which is a maximum value of the function, $P^*(x)$. }\label{rejectsampling}
 \end{figure}
 
-Theacceptance rate is the ratio of the volume under the curve $P(x)$ to the volumeunder $cQ(x)$, the fact that $P$ and $Q$ are both normalized here implies thatthe acceptance rate will be $1/c$.
+The
+acceptance rate is the ratio of the volume under the curve $P(x)$ to the volume
+under $cQ(x)$, the fact that $P$ and $Q$ are both normalized here implies that
+the acceptance rate will be $1/c$. If it is $N$-dimensional problem, the acceptance rate becomes $(1/c)^N$ 
+
+Rejection sampling, therefore, whilst a useful method for one-dimensional
+problems, is not expected to be a practical technique for generating samples
+from high-dimensional distributions $P(x)$.
 
 
 \subsection{The Metropolis-Hastings method}
 
+The Metropolis-Hastings algorithm instead makes use of a proposal density
+$Q$ which depends on the current state $x^{(t)}$. The density $Q(x', x^{(t)})$ might
+be a simple distribution such as a Gaussian centred on the current $x^{(t)}$. The
+proposal density $Q(x', x^{(t)})$ can be any fixed density from which we can draw
+samples. In contrast to importance sampling and rejection sampling, it is not
+necessary that $Q(x', x^{(t)})$ look at all similar to $P(x)$ in order for the algorithm
+to be practically useful.
 
+We assume that we can evaluate $P^*(x)$ for any $x$. A tentative
+new state $x'$ is generated from the proposal density $Q(x', x^{(t)})$. To decide whether to accept the new state, we compute the quantity
+$$
+a= {P^*(x)~Q( x^{(t)},x') \over P^*(x^{(t)})~Q(x', x^{(t)}) }
+$$
+The algorithm is 
+
+\begin{itemize}
+  \item If $a \le 1$ then the new state is accepted.  
+  \item Otherwise, the new state is accepted with probability a. 
+  \item If the step is accetpted, we set $x^{(t+1)}=x'$.
+  \item If the step is rejected, then we set $x^{(t+1)}=x^{(t)}$ (The rejected points are not discarded.)
+\end{itemize}
+
+If the
+proposal density is a simple symmetrical density such as a Gaussian centred on
+the current point, then the factor ${Q( x^{(t)},x') \over Q(x', x^{(t)}) }$ is unity, and the Metropolis-Hastings
+method simply involves comparing the value of the target density at the two
+points. {\it i.e.} $a={P^*(x) \over P^*(x^{(t)})}$.
+
+Rule of thumb: lower bound on number of iterations of a
+Metropolis method. If the largest length scale of the space of
+probable states is $L$, a Metropolis method whose proposal distribution
+generates a random walk with step size $\epsilon$ must be run for at
+least $T \sim (L/\epsilon)^2$ iterations to obtain an independent sample. This rule of thumb gives only a lower bound; the situation may be much
+worse, if, for example, the probability distribution consists of several islands
+of high probability separated by regions of low probability.
+
+It is good news because, unlike the
+cases of rejection sampling and importance sampling, there is no catastrophic
+dependence on the dimensionality $N$ in MH. Roughly, $T \sim (\sigma_{Max}/\sigma_{min})^2$ from the rule of thumb. Because this quadratic dependence on the lengthscale-ratio may still force us
+to make very lengthy simulations. We will discuss how to suppress the random works in Monte Carlo simulations later. 
+
+\subsection{Gibbs sampling}
+
+In the general case of a system with K variables, a single iteration involves
+sampling one parameter at a time. 
+$$
+x^{(t+1)}_1 \sim P(x_1|x^{(t)}_2,x^{(t)}_3,x^{(t)}_4,...,x^{(t)}_K),
+$$
+$$
+x^{(t+1)}_2 \sim P(x_2|x^{(t)}_1,x^{(t)}_3,x^{(t)}_4,...,x^{(t)}_K),
+$$
+$$
+\cdots
+$$
+
+Gibbs sampling suffers from the same defect as simple Metropolis algorithms - the state space is explored by a slow random walk, unless a fortuitous parameterization
+has been chosen that makes the probability distribution $P(x)$
+separable. It slowly progresses made by
+Gibbs sampling when $ L \gg \epsilon$. However Gibbs sampling involves no adjustable parameters, so it is an attractive
+strategy when one wants to get a model running quickly.
+
+\subsection{Markov chain}
+
+We denote by $p^{(t)}(\vect x)$ the probability
+distribution of the state of a Markov chain simulator. Our aim is to find a Markov chain such that as $t \rightarrow \infty$, $p^{(t)}(\vect x)$ tends
+to the desired distribution $P(x)$.
+
+A Markov chain can be specified by an initial probability distribution $p^{(0)}(\vect x)$ and a transition probability $T(\vect x' ; \vect x)$.
+
+Then, 
+$$
+p^{(t+1)}(\vect x) = \int d^N \vect x ~T(\vect x' ; \vect x)p^{(t)}(\vect x)
+$$
+
+Look at \href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14.pdf/}{the link} for a simple example of Markov chain and Metropolis demonstration of section 29.4 of \href{http://www.inference.phy.cam.ac.uk/mackay/itila/}{the book of David Mackay.}
+
+The Markov chain must have the following properties. 
+
+1. The desired distribution P(x) is an invariant distribution of the chain's transition. An invariant distribution is an eigenvector of the transition probability matrix that has eigenvalue 1.
+
+2. The chain must also be ergodic, that is, $p^{(t)}(\vect x) \rightarrow \pi(\vect x)$ as $t \rightarrow \infty$, for any initial $p^{(0)}(\vect x)$. 
+
+A chain might not be ergodic when the matrix are reducible, or the chain is a periodic set. 
+
+\subsection{Exercise 29.7}
+Detailed balance condition. 
+$$
+T(\vect x_a ; \vect x_b)P(\vect x_b) = T(\vect x_b ; \vect x_a)P(\vect x_a),
+$$
+for all $\vect x_a$ and $\vect x_b$. 
+Then, 
+$$
+\int d^N x_b~T(\vect x_a ; \vect x_b)P(\vect x_b) = \int d^N x_b~T(\vect x_b ; \vect x_a)P(\vect x_a),
+$$
+for all $\vect x_a$ and $\vect x_b$.
+Then, using (29.45) of the book,
+$$
+\int d^N x_b ~d^N x_c~B(\vect x_a ; \vect x_c)B(\vect x_c ; \vect x_b)P(\vect x_b) =\int d^N x_b ~d^N x_c~B(\vect x_a ; \vect x_c)B(\vect x_c ; \vect x_a)P(\vect x_a),
+$$
+for all $\vect x_a$.
+
+Both the left hand and the right hand side are $P(x_a)$ for all $\vect x_a$.
+
+\subsection{Slice sampling}
+
+A single transition $(x,u) \rightarrow (x',u')$ of a one-dimensional slice sampling
+algorithm has the following steps, of which steps 3 and 8 will require further
+elaboration.
+
+1. evaluate $P^*(x)$
+
+2. draw a vertical coordinate $u' \sim$ Uniform$(0,P^*(x))$
+
+3. create a horizontal interval $(x_l, x_r)$ enclosing $x$
+
+~~3a. draw $r \sim$ Uniform$(0,1)$
+
+~~3b. $x_l := x-rw$
+
+~~3c. $x_r := x+(1-r)w$
+
+~~3d. while $(P^*(x_l) > u')$ $\{x_l := x-rw\}$
+
+~~3e. while $(P^*(x_r) > u')$ $\{x_r:= x+w\}$
+
+4. loop $\{$
+
+5. ~~~~~~~~~ draw $x' \sim$ Uniform$(x_l,x_r)$
+
+6. ~~~~~~~~~ evaluate $P^*(x')$
+
+7. ~~~~~~~~~ if $P^*(x') >u'$ break out of loop 4-9
+
+8. ~~~~~~~~~ else modify the interval $(x_l,x_r)$
+
+~~8a. ~~~~~~~~~if $(x' > x)\{x_r:=x'\}$
+
+~~8b. ~~~~~~~~~else $\{x_l:=x'\}$ 
+
+9. $\}$  
+
+$$
+$$
+Like a standard Metropolis method, slice sampling gets around by a randomwalk, but whereas in the Metropolis method, the choice of the step size is critical to the rate of progress, in slice sampling the step size is self-tuning. Ifthe initial interval size w is too small by a factor $f$ compared with the width ofthe probable region then the stepping-out procedure expands the interval size.The cost of this stepping-out is only linear in $f$, whereas in the Metropolismethod the computer-time scales as the square of $f$ if the step size is toosmall.
+
+
+\subsubsection{Exercise 29.10}
+Problem : Investigate the properties of slice sampling applied to thedensity function $P^*(x)$. 
+
+$$
+P^*(x)= \{
+\begin{array}{cc}
+10 ~~~~~~as ~0\leq x<1\\
+~~0 ~~~~~~as ~1\leq x \leq 11\\
+\end{array}
+$$
+
+$x$ is a real variable between 0.0 and 11.0.How long does it take typically for slice sampling to get from an $x$ inthe peak region $x  \in (0,~ 1)$ to an $x$ in the tail region $x \in (1,~11)$, and viceversa? Confirm that the probabilities of these transitions do yield anasymptotic probability density that is correct.
+$$
+$$
+Answer : Let us solve a simple random walk problem with 2 degrees of freedom(back and forward). With the size of the step, $w$ and the number of the turns, $N$, the maximum reaching distance will be $\sqrt{N w}$. 
+
+To change the position of x from $(0,~1)$ to (1,11)$, the probability is $1/10$ from the density funcions. 
 \end{document}
 
 

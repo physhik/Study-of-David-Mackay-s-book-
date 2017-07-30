@@ -90,7 +90,7 @@ The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-boo
 
 What I understand about importance sampling is, when we numerically integrate some function, importance sampling can reduce the cost. The detail can be found in the next link. 
 
-A practical diculty with importance sampling is that it is hard to estimate
+A practical difficulty with importance sampling is that it is hard to estimate
 how reliable the estimator is. 
 
-### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb) 
+### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb) 
