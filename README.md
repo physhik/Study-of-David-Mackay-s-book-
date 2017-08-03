@@ -96,7 +96,7 @@ how reliable the estimator is.
 ### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
 
 
-### [Reproduce the figure 29.12]
+## Reproduce the figure 29.12
 
 ![transition_probability](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
 
