@@ -99,7 +99,8 @@ how reliable the estimator is.
 
 ## Metropolis-Hastings method 
 
-### Reproduce the figure 29.12
+### [Reproduce the figure 29.12, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
+
 
 
 ![state sequence](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/statesequence.png)
@@ -108,7 +109,7 @@ how reliable the estimator is.
 
 ![Histogram of occupancy of the states after 100, 400, and 1200 iterations](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/independentsampling.png)
 
-## Reproduce the figure 29.14
+### [Reproduce the figure 29.14, Mathematica notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
 
 ![transition probability](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
 
