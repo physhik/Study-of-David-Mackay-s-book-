@@ -96,4 +96,17 @@ how reliable the estimator is.
 ### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
 
 
-###[Reproduce the figure 29.12](http://localhost:8888/notebooks/Documents/py/spectral-clustering/reproduceFigure29.12.ipynb)
+###[Reproduce the figure 29.12,  transition  probability matrix](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
+
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-1.png)
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-2.png)
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-3.png)
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-4.png)
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-5.png)
+
+###[Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-6.png)
