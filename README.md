@@ -96,19 +96,33 @@ how reliable the estimator is.
 ### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
 
 
-## Reproduce the figure 29.12
 
-![transition_probability](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
+## Metropolis-Hastings method 
+
+### Reproduce the figure 29.12
 
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-1.png)
+![state sequence](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/statesequence.png)
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-2.png)
+![Histogram of occupancy of the states after 100, 400, and 1200 iterations](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/metropolissampling.png)
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-3.png)
+![Histogram of occupancy of the states after 100, 400, and 1200 iterations](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/independentsampling.png)
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-4.png)
+## Reproduce the figure 29.14
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-5.png)
+![transition probability](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
 
-![Reproduce the figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-6.png)
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-1.png)
+
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-2.png)
+
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-3.png)
+
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-4.png)
+
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-5.png)
+
+![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-6.png)
+
+
+
