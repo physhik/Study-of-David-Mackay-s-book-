@@ -109,7 +109,7 @@ how reliable the estimator is.
 
 ![Histogram of occupancy of the states after 100, 400, and 1200 iterations](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/independentsampling.png)
 
-### [Reproduce the figure 29.14, Mathematica notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
+### [Reproduce the figure 29.14, Mathematica notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14.pdf)
 
 ![transition probability](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/transition_probability.png)
 
@@ -126,4 +126,7 @@ how reliable the estimator is.
 ![Reproduce the figure 29.14](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14-6.png)
 
 
+## Slice sampling Monte Carlo method 
 
+
+### [Exercise 29.10, ipython notebook notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)
