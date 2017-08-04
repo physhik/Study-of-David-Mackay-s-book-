@@ -130,3 +130,22 @@ how reliable the estimator is.
 
 
 ### [Exercise 29.10, ipython notebook notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)
+
+The exercise 29.10 is to find the turns from the peak to tail and from tail to peak. 
+
+The probability density is given as the follwoing.  
+
+![probability density](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10prob.png)
+
+
+Using slice sampling (the code is found in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)), the number of turns it takes from the peak to tail is as follows.  
+
+![number of turns](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10turns.png)
+
+The average of the number of turns is about 5.2362. 
+
+On the other hand, the average of the number of the turns from tail to peak is about 5.2967. 
+
+They are quite close, and it makes sense because the area of the peak and the tail in the density function are matched. 
+
+
