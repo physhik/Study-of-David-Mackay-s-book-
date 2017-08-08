@@ -654,7 +654,7 @@ from high-dimensional distributions $P(x)$.
 The Metropolis-Hastings algorithm instead makes use of a proposal density
 $Q$ which depends on the current state $x^{(t)}$. The density $Q(x', x^{(t)})$ might
 be a simple distribution such as a Gaussian centred on the current $x^{(t)}$. The
-proposal density $Q(x', x^{(t)})$ can be any fixed density from which we can draw
+proposal density $Q(x', x^{(t)})$ can be any fixed density from which we can draw
 samples. In contrast to importance sampling and rejection sampling, it is not
 necessary that $Q(x', x^{(t)})$ look at all similar to $P(x)$ in order for the algorithm
 to be practically useful.
@@ -794,11 +794,18 @@ elaboration.
 
 $$
 $$
-Like a standard Metropolis method, slice sampling gets around by a randomwalk, but whereas in the Metropolis method, the choice of the step size is critical to the rate of progress, in slice sampling the step size is self-tuning. Ifthe initial interval size w is too small by a factor $f$ compared with the width ofthe probable region then the stepping-out procedure expands the interval size.The cost of this stepping-out is only linear in $f$, whereas in the Metropolismethod the computer-time scales as the square of $f$ if the step size is toosmall.
+Like a standard Metropolis method, slice sampling gets around by a random
+walk, but whereas in the Metropolis method, the choice of the step size is critical to the rate of progress, in slice sampling the step size is self-tuning. If
+the initial interval size w is too small by a factor $f$ compared with the width of
+the probable region then the stepping-out procedure expands the interval size.
+The cost of this stepping-out is only linear in $f$, whereas in the Metropolis
+method the computer-time scales as the square of $f$ if the step size is too
+small.
 
 
 \subsubsection{Exercise 29.10}
-Problem : Investigate the properties of slice sampling applied to thedensity function $P^*(x)$. 
+Problem : Investigate the properties of slice sampling applied to the
+density function $P^*(x)$. 
 
 $$
 P^*(x)= \{
@@ -808,16 +815,74 @@ P^*(x)= \{
 \end{array}
 $$
 
-$x$ is a real variable between 0.0 and 11.0.How long does it take typically for slice sampling to get from an $x$ inthe peak region $x  \in (0,~ 1)$ to an $x$ in the tail region $x \in (1,~11)$, and viceversa? Confirm that the probabilities of these transitions do yield anasymptotic probability density that is correct.
+$x$ is a real variable between 0.0 and 11.0.
+How long does it take typically for slice sampling to get from an $x$ in
+the peak region $x  \in (0,~ 1)$ to an $x$ in the tail region $x \in (1,~11)$, and vice
+versa? Confirm that the probabilities of these transitions do yield an
+asymptotic probability density that is correct.
 $$
 $$
-Answer : Let us solve a simple random walk problem with 2 degrees of freedom(back and forward). With the size of the step, $w$ and the number of the turns, $N$, the maximum reaching distance will be $\sqrt{N w}$. 
+Answer : I have explained the answer 
+ \href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb}{here(click it)}.
 
-To change the position of x from $(0,~1)$ to (1,11)$, the probability is $1/10$ from the density funcions. 
+\subsection{Practicalities}
+
+{\it Can we predict how long a Markov chain Monte Carlo simulationwill take to equilibrate?} 
+
+By considering the random walks involved in aMarkov chain Monte Carlo simulation we can obtain simple lower bounds onthe time required for convergence. But predicting this time more precisely is adifficult problem, and most of the theoretical results giving upper bounds onthe convergence time are of little practical use. The exact sampling methods will be discussed later and it offers a solution to this problem for certain Markov chains.
+$$
+$$
+{\it Can we diagnose or detect convergence in a running simulation?}
+This is also a difficult problem. There are a few practical tools available, butnone of them is perfect (Cowles and Carlin, 1996).
+$$
+$$
+{\it Can we speed up the convergence time and time between independent samples of a Markov chain Monte Carlo method? }
+
+Here, there isgood news, as described in the next chapter, which describes the HamiltonianMonte Carlo method, overrelaxation, and simulated annealing.
+$$
+$$
+{\it Can the normalizing constant be evaluated?}
+If the target density $P(\vect x)$ is given in the form of an unnormalized density $P(\vect x)$ with  $P(\vect x) = P^*(\vect x) /Z $, the value of $Z$ may well be of interest. MonteCarlo methods do not readily yield an estimate of this quantity, and it is anarea of active research to find ways of evaluating it. Techniques for evaluating$Z$ include:
+$$
+$$1. Importance sampling (reviewed by Neal (1993b)) and annealed importancesampling (Neal, 1998).
+$$
+$$
+2. `Thermodynamic integration' during simulated annealing, the `acceptance ratio' method, and `umbrella sampling' (reviewed by Neal (1993b)).
+$$
+$$
+3. `Reversible jump Markov chain Monte Carlo' (Green, 1995).
+$$
+$$
+One way of dealing with Z, however, may be to find a solution to one'stask that does not require that Z be evaluated. In Bayesian data modellingone might be able to avoid the need to evaluate Z { which would be importantfor model comparison { by not having more than one model. Instead of usingseveral models (differing in complexity, for example) and evaluating their relativeposterior probabilities, one can make a single hierarchical model having,for example, various continuous hyperparameters which play a role similar tothat played by the distinct models (Neal, 1996). In noting the possibility ofnot computing Z, I am not endorsing this approach. The normalizing constantZ is often the single most important number in the problem, and I think everyeffort should be devoted to calculating it.
+
+
+\section{Efficient Monte Carlo Methods}
+
+\subsection{Summary of Monte Carlos methods }
+
+In high-dimensional problems the only satisfactory methods are thosebased on Markov chains, such as the Metropolis method, Gibbs samplingand slice sampling. Gibbs sampling is an attractive method becauseit has no adjustable parameters but its use is restricted to caseswhere samples can be generated from the conditional distributions. Slicesampling is attractive because, whilst it has step-length parameters, itsperformance is not very sensitive to their values.
+
+
+
+Simple Metropolis algorithms and Gibbs sampling algorithms, althoughwidely used, perform poorly because they explore the space by a slowrandom walk. The next chapter will discuss methods for speeding upMarkov chain Monte Carlo simulations.
+
+
+Slice sampling does not avoid random walk behaviour, but it automaticallychooses the largest appropriate step size, thus reducing the badeffects of the random walk compared with, say, a Metropolis methodwith a tiny step size.
+
+
+\subsection{Hamiltonian Monte Carlo}
+
+The Hamiltonian Monte Carlo method is a Metropolis method, applicableto continuous state spaces, that makes use of gradient information to reducerandom walk behaviour.
+
+Using the Algorithm 30.1, figure 30.2 is reproduced in  \href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb}{this ipython notebook(click it)}.
+
+
+\begin{figure}[h!]
+\centerline{\includegraphics[scale=0.6]{algorithmhmc.png}}
+\caption{Algorithm 30.1 of the book. Octave sourcecode for the Hamiltonian MonteCarlo method.}\label{HMC}
+\end{figure}
+
+
+
+
 \end{document}
-
-
-
-
-
-
