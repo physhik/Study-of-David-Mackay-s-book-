@@ -1,6 +1,12 @@
-# David Mackay's machine learning book review
+# David Mackay's machine learning book 
 
-In this repository, I put the materials for studying David Mackay's [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms") of David Mackay, which I made to help myself and others want to study the book and machine learnings. 
+During I study machine learning and python coding for it, the biggest trouble for me is that it's hard to find the python code for the core of the algorithm. It is easy to look for completed package, but it's never been so helpful for understanding how the real algorithm works. 
+
+This repository contains the materials made by myself in order to help myself. Most essential theories and algorithms are given by a graduate level-[book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html) Thus. the contents here will be much more helpful for you with David Mackay's [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms").
+
+Especially, I followed Mackay's roadmap he introduced at the first of the book. 
+
+![roadmap](https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png)
 
 In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
 
