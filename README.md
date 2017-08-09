@@ -6,7 +6,7 @@ This repository contains the materials made by myself in order to help myself. M
 
 Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
-![roadmap](https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png)
+![roadmap](https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png = 100x)
 
 In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
 
