@@ -1,18 +1,47 @@
-# David Mackay's machine learning book 
+# Python Bayesian inference and machine learning (David Mackay's machine learning textbook) 
 
 During I study machine learning and python coding for it, the biggest trouble for me is that it's hard to find the python code for the core of the algorithm. It is easy to look for completed package, but it's never been so helpful for understanding how the real algorithm works. 
 
 This repository contains the materials made by myself in order to help myself. Most essential theories and algorithms are given by a graduate level-[book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html) Thus. the contents here will be much more helpful for you with David Mackay's [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms").
 
-Especially, I followed Mackay's roadmap he introduced at the first of the book. 
+Especially, I followed Mackay's roadmap he introduced at the first of the book.  Inference, Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics.
+
 
 <p align="center">
 <img src="https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png" width="500">
 </p>
 
-In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
+## List of ipython notebooks and python codes. 
 
-I also solved some of challenging exercises in the book, and included in the LateX file. If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests http://markdowntutorial.com/lesson/7from the algorithms on this md files. 
+### 1. Clustering 
+
+- [K-means clustering ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
+
+- [K-means clustering python code](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/clusternew.py) 
+
+- [Soft K-means clustering python code](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/softcluster.py)
+
+- [Enhanced Soft K-means clustering python code](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)  
+
+- [Axis-aligned Gaussian soft K-means python code](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/axisaligngaussiansoftkmeans.py)
+
+### 2. Monte Carlo method
+
+- [Rejection Sampling Monte Carlo method ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb)
+
+
+
+I also solved some of challenging exercises in the book, and included in the  [LateX file](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf).
+
+
+
+
+
+If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). 
+
+
+
+There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests from the algorithms on this md files. 
 
 ## Spectral Clustering (Soft K-means)
 
