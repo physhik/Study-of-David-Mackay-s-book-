@@ -29,10 +29,18 @@ Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
 - [Rejection Sampling Monte Carlo method ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb)
 
+- [Importance Sampling Monte Carlo method ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
+
+- [Metropolis-Hastings sampling Monte Carlo method ipython notebook and figure 29.12](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
+
+- [Slice sampling Monte Carlo method ipython notebook and exercise 29.10](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)
+
+- [Hamiltonian Monte Carlo method ipython notebook and figure 30.2](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
+
+- [Gibbs sampling Monte Carlo method and over-relaxation and figure 30.3](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
 
 I also solved some of challenging exercises in the book, and included in the  [LateX file](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf).
-
 
 
 
