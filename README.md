@@ -7,7 +7,7 @@ This repository contains the materials made by myself in order to help myself. M
 Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
 <p align="center">
-<img src="https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png" width="200">
+<img src="https://github.com/physhik/spectral-clustering/blob/master/Roadmap.png" width="500">
 </p>
 
 In this md file, I will put some visual results I code during study. Bayesian theory, maximum likelihood and clustering, various Monter carlo method, neural network will be topics. Chapter 1-3, 20-24, 27-24,38-45 of the book. 
@@ -21,6 +21,10 @@ I also solved some of challenging exercises in the book, and included in the Lat
 I felt there's no good python tutorial for spectral clustering.   
 
 The theory for clustering and soft k-means can be found at the [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms") of David Mackay. Especially I have read chapter 20 ~ 22 and used the algorithm in the book to obtain the following figures.
+
+<p align="center">
+<img src="https://github.com/physhik/spectral-clustering/blob/master/datapoints.png" width="400">
+</p>
 
 
 ![data points plot](https://github.com/physhik/spectral-clustering/blob/master/datapoints.png)
