@@ -27,3 +27,5 @@
 \BOOKMARK [1][-]{section.5}{Efficient Monte Carlo Methods}{}% 27
 \BOOKMARK [2][-]{subsection.5.1}{Summary of Monte Carlos methods }{section.5}% 28
 \BOOKMARK [2][-]{subsection.5.2}{Hamiltonian Monte Carlo}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.3}{Over-relaxation}{section.5}% 30
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Exercise 30.2}{subsection.5.3}% 31

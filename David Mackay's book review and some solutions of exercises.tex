@@ -874,7 +874,7 @@ Slice sampling does not avoid random walk behaviour, but it automaticallychoose
 
 The Hamiltonian Monte Carlo method is a Metropolis method, applicableto continuous state spaces, that makes use of gradient information to reducerandom walk behaviour.
 
-Using the Algorithm 30.1, figure 30.2 is reproduced in  \href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb}{this ipython notebook(click it)}.
+Using the Algorithm 30.1(figure \ref{HMC}), figure 30.2 is reproduced in  \href{https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb}{this ipython notebook(click it)}.
 
 
 \begin{figure}[h!]
@@ -883,6 +883,27 @@ Using the Algorithm 30.1, figure 30.2 is reproduced in  \href{https://github.com
 \end{figure}
 
 
+\subsection{Over-relaxation}
+
+The method of overrelaxation is a method for reducing random walk behaviourin Gibbs sampling. Overrelaxation was originally introduced for systems inwhich all the conditional distributions are Gaussian.
+
+In Adler's overrelaxation method, one instead samples $x^{(t+1)}_i$
+ from a Gaussian that is biased to the opposite side of the conditional distribution.If the conditional distribution of $x_i$ is Normal($\mu$, $\sigma^2$) and the current value of$x_i$ is $x^{(t)}_i$, then Adler's method sets $x_i$ to
+
+$$
+x^{(t+1)}_i = \mu +\alpha (x^{(t)}_i - \mu)+ (1-\alpha^2)^{1/2}\sigma \nu
+$$
+where $\nu$ $\sim$ Normal(0, 1) and $\alpha$ is a parameter between -1 and 1, usually set toa negative value. (If $\alpha$ is positive, then the method is called under-relaxation.)
+
+\subsubsection{Exercise 30.2}
+
+Show that this individual transition leaves invariant the conditionaldistribution $x_i \sim$ Normal($\mu$, $\sigma^2$).
+$$
+$$
+Answer : $x^{(t+1)}_i = \mu +\alpha (x^{(t)}_i - \mu)+ (1-\alpha^2)^{1/2}\sigma \nu$. 
+$$
+$$
+The distribution of $x^{(t+1)}_i$ is still Gaussian. The mean of {$x^{(t+1)}_i $} is also $\mu$. At last, the standard deviation is $\sigma$ as well. To compute the mean and variance, you can use $ \nu \equiv {(x-\mu) \over \sigma}$.  
 
 
 \end{document}
