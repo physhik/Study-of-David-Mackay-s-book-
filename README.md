@@ -165,3 +165,18 @@ Carlo method. Note that it is made of two main algorithms, leapfrog algorithm an
 
 The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
 
+
+One of the main result is as a following picture. 
+
+![HMC](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.png)
+
+You can find more pictures and python code in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
+
+
+## Gibbs sampling and over-relaxation
+
+The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
+
+One of the figure showing a big over-relaxation. 
+
+![overrelaxation](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/overrelaxation.png)
