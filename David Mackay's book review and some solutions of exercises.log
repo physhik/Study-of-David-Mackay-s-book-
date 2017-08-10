@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 AUG 2017 02:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 AUG 2017 17:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,87 +911,87 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 131.
 
-[2] [3] [4]
-Overfull \hbox (11.3753pt too wide) in paragraph at lines 311--314
+[2] [3] [4] [5]
+Overfull \hbox (11.3753pt too wide) in paragraph at lines 335--338
 \OT1/cmr/m/n/10.95 tributes very tiny in $\OML/cmm/m/it/10.95 ^^V$\OT1/cmr/m/n/
 10.95 . Then, the mean should be close to mean of $(8\OML/cmm/m/it/10.95 :\OT1/
 cmr/m/n/10.95 191\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 9\OML/cmm/m/it/10.95 
 :\OT1/cmr/m/n/10.95 898\OML/cmm/m/it/10.95 ;$
  []
 
-[5] <7scientistplot.png, id=171, 361.35pt x 238.8925pt>
+[6] <7scientistplot.png, id=175, 361.35pt x 238.8925pt>
 File: 7scientistplot.png Graphic file (type png)
 
 <use 7scientistplot.png>
-Package pdftex.def Info: 7scientistplot.png used on input line 344.
+Package pdftex.def Info: 7scientistplot.png used on input line 379.
 (pdftex.def)             Requested size: 180.0pt x 119.00124pt.
- <7scientistplot2.png, id=172, 361.35pt x 237.88875pt>
+ <7scientistplot2.png, id=176, 361.35pt x 237.88875pt>
 File: 7scientistplot2.png Graphic file (type png)
 
 <use 7scientistplot2.png>
-Package pdftex.def Info: 7scientistplot2.png used on input line 344.
+Package pdftex.def Info: 7scientistplot2.png used on input line 379.
 (pdftex.def)             Requested size: 180.0pt x 118.50122pt.
- [6 <./7scientistplot.png (PNG copy)> <./7scientistplot2.png (PNG copy)>] <lapl
-ace.pdf, id=179, 361.35pt x 230.8625pt>
+ [7 <./7scientistplot.png (PNG copy)> <./7scientistplot2.png (PNG copy)>] <lapl
+ace.pdf, id=185, 361.35pt x 230.8625pt>
 File: laplace.pdf Graphic file (type pdf)
 
 <use laplace.pdf>
-Package pdftex.def Info: laplace.pdf used on input line 402.
+Package pdftex.def Info: laplace.pdf used on input line 437.
 (pdftex.def)             Requested size: 180.0pt x 115.00119pt.
- <laplace2.pdf, id=180, 361.35pt x 232.87pt>
+ <laplace2.pdf, id=186, 361.35pt x 232.87pt>
 File: laplace2.pdf Graphic file (type pdf)
 
 <use laplace2.pdf>
-Package pdftex.def Info: laplace2.pdf used on input line 402.
+Package pdftex.def Info: laplace2.pdf used on input line 437.
 (pdftex.def)             Requested size: 180.0pt x 116.00119pt.
- [7] [8 <./laplace.pdf> <./laplace2.pdf
+ [8 <./laplace.pdf> <./laplace2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./laplace2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->] <Likelihood.png, id=240, 361.35pt x 368.37625pt>
+>] <Likelihood.png, id=236, 361.35pt x 368.37625pt>
 File: Likelihood.png Graphic file (type png)
  <use Likelihood.png>
-Package pdftex.def Info: Likelihood.png used on input line 470.
+Package pdftex.def Info: Likelihood.png used on input line 505.
 (pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
 
-<BayesianRegression.png, id=241, 361.35pt x 368.37625pt>
+<BayesianRegression.png, id=237, 361.35pt x 368.37625pt>
 File: BayesianRegression.png Graphic file (type png)
 
 <use BayesianRegression.png>
-Package pdftex.def Info: BayesianRegression.png used on input line 470.
+Package pdftex.def Info: BayesianRegression.png used on input line 505.
 (pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
 
-<BayesianRegression2.png, id=242, 361.35pt x 368.37625pt>
+<BayesianRegression2.png, id=238, 361.35pt x 368.37625pt>
 File: BayesianRegression2.png Graphic file (type png)
 
 <use BayesianRegression2.png>
-Package pdftex.def Info: BayesianRegression2.png used on input line 470.
+Package pdftex.def Info: BayesianRegression2.png used on input line 505.
 (pdftex.def)             Requested size: 143.9978pt x 146.79703pt.
 
-<BayesianRegression3.png, id=243, 75.28125pt x 225.84375pt>
+<BayesianRegression3.png, id=239, 75.28125pt x 225.84375pt>
 File: BayesianRegression3.png Graphic file (type png)
 
 <use BayesianRegression3.png>
-Package pdftex.def Info: BayesianRegression3.png used on input line 470.
+Package pdftex.def Info: BayesianRegression3.png used on input line 505.
 (pdftex.def)             Requested size: 36.0022pt x 108.0109pt.
- [9 <./Likelihood.png (PNG copy)> <./BayesianRegression.png (PNG copy)> <./Baye
-sianRegression2.png (PNG copy)> <./BayesianRegression3.png (PNG copy)>]
-<datapointsExercise28-2.png, id=250, 361.35pt x 250.9375pt>
+ [9] [10 <./Likelihood.png (PNG copy)> <./BayesianRegression.png (PNG copy)> <.
+/BayesianRegression2.png (PNG copy)> <./BayesianRegression3.png (PNG copy)>]
+<datapointsExercise28-2.png, id=254, 361.35pt x 250.9375pt>
 File: datapointsExercise28-2.png Graphic file (type png)
 
 <use datapointsExercise28-2.png>
-Package pdftex.def Info: datapointsExercise28-2.png used on input line 510.
+Package pdftex.def Info: datapointsExercise28-2.png used on input line 545.
 (pdftex.def)             Requested size: 251.9989pt x 175.00027pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 517.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 552.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 517.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 552.
 
-Overfull \hbox (67.98486pt too wide) detected at line 523
+Overfull \hbox (67.98486pt too wide) detected at line 558
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D\OMS/cmsy/m/n/10 j\OML/cmm
 /m/it/10 ^^[[]; ^^[[]; ^^[[]; \OMS/cmsy/m/n/10 H[]\OT1/cmr/m/n/10 ) = [][] \OML
 /cmm/m/it/10 d![] [][] d![]P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D\OMS/cmsy/m/n/10
@@ -1002,34 +1002,38 @@ cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^[[]; ^^[[]
 ; \OMS/cmsy/m/n/10 H[]\OT1/cmr/m/n/10 )
  []
 
-[10 <./datapointsExercise28-2.png (PNG copy)>]
-Overfull \hbox (109.3979pt too wide) detected at line 533
+
+Overfull \hbox (109.3979pt too wide) detected at line 568
 \OML/cmm/m/it/6 P\OT1/cmr/m/n/6 (\OML/cmm/m/it/6 D\OMS/cmsy/m/n/6 j\OML/cmm/m/i
 t/6 ^^[[]; ^^[[]; ^^[[]; \OMS/cmsy/m/n/6 H[]\OT1/cmr/m/n/6 ) = [][] \OML/cmm/m/
 it/6 d![] [][] d![][] [] [] [] [] [] [] [] []
  []
 
 
-Overfull \hbox (101.1423pt too wide) detected at line 545
+Overfull \hbox (101.1423pt too wide) detected at line 580
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D\OMS/cmsy/m/n/10 j\OML/cmm
 /m/it/10 ^^[[]; ^^[[]; ^^[[]; \OMS/cmsy/m/n/10 H[]\OT1/cmr/m/n/10 ) = [][] \OML
 /cmm/m/it/10 d![] [][] d![][] [] [] [] [] []
  []
 
-[11] [12] <rejectSampling.png, id=274, 839.135pt x 325.215pt>
+[11 <./datapointsExercise28-2.png (PNG copy)>] [12]
+<rejectSampling.png, id=274, 839.135pt x 325.215pt>
 File: rejectSampling.png Graphic file (type png)
-
-<use rejectSampling.png>
-Package pdftex.def Info: rejectSampling.png used on input line 638.
+ <use rejectSampling.png>
+Package pdftex.def Info: rejectSampling.png used on input line 673.
 (pdftex.def)             Requested size: 335.64804pt x 130.0837pt.
 
-Overfull \hbox (0.7696pt too wide) in paragraph at lines 647--650
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.7696pt too wide) in paragraph at lines 682--685
 []\OT1/cmr/m/n/10.95 Rejection sam-pling, there-fore, whilst a use-ful method f
 or one-dimensional
  []
 
-[13 <./rejectSampling.png>] [14]
-Overfull \hbox (24.39186pt too wide) detected at line 752
+[13] [14 <./rejectSampling.png>] [15]
+Overfull \hbox (24.39186pt too wide) detected at line 787
 [] \OML/cmm/m/it/10.95 d[]x[] []d[]x[] []B\OT1/cmr/m/n/10.95 ([][]; [][])\OML/c
 mm/m/it/10.95 B\OT1/cmr/m/n/10.95 ([][]; [][])\OML/cmm/m/it/10.95 P\OT1/cmr/m/n
 /10.95 ([][]) = [] \OML/cmm/m/it/10.95 d[]x[] []d[]x[] []B\OT1/cmr/m/n/10.95 ([
@@ -1037,38 +1041,38 @@ mm/m/it/10.95 B\OT1/cmr/m/n/10.95 ([][]; [][])\OML/cmm/m/it/10.95 P\OT1/cmr/m/n
 95 P\OT1/cmr/m/n/10.95 ([][])\OML/cmm/m/it/10.95 ;
  []
 
-[15] [16] [17] <algorithmhmc.png, id=303, 590.205pt x 553.06625pt>
+[16] [17] [18] <algorithmhmc.png, id=307, 590.205pt x 553.06625pt>
 File: algorithmhmc.png Graphic file (type png)
 
 <use algorithmhmc.png>
-Package pdftex.def Info: algorithmhmc.png used on input line 922.
+Package pdftex.def Info: algorithmhmc.png used on input line 957.
 (pdftex.def)             Requested size: 354.12573pt x 331.8423pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19 <./algorithmhmc.png>] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 958.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 958.
+[19] [20 <./algorithmhmc.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 993.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 993.
 
 (./David Mackay's book review and some solutions of exercises.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 958.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 958.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 993.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 993.
 Package rerunfilecheck Info: File `"David Mackay's book review and some solutio
 ns of exercises".out' has not changed.
 (rerunfilecheck)             Checksum: 9016B653B5A679644D8065520200EF48;2113.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 958.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 993.
  )
 (\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 876 ({)
-### simple group (level 2) entered at line 875 ({)
+### simple group (level 3) entered at line 911 ({)
+### simple group (level 2) entered at line 910 ({)
 ### simple group (level 1) entered at line 135 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  28231 strings out of 493089
  695068 string characters out of 6134842
- 901295 words of memory out of 5000000
+ 903296 words of memory out of 5000000
  31115 multiletter control sequences out of 15000+600000
  19536 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1097,7 +1101,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 Output written on "David Mackay's book review and some solutions of exercises.p
-df" (20 pages, 900647 bytes).
+df" (20 pages, 903420 bytes).
 PDF statistics:
  410 PDF objects out of 1000 (max. 8388607)
  334 compressed objects within 4 object streams

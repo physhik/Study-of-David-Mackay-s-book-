@@ -49,9 +49,9 @@ Here I display the figures I gained from the above python codes and mathematica 
 
 
 
-### Spectral Clustering (Soft K-means)
+### 1. Clustering
 
-#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
+[ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
 
 I felt there's no good python tutorial for spectral clustering. The theory for clustering and soft k-means can be found at the [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms") of David Mackay. Especially I have read chapter 20 ~ 22 and used the algorithm in the book to obtain the following figures.
 
@@ -86,41 +86,59 @@ The enhanced soft K-means allow each cluster to have independent size of the cir
  
 The radii of the two main circles are about 0.142(red) and 0.149(yellow). The standard deviations of the two clusters are about 0.02 and 0.02. My soft K-means clustering alogrithm gaussian distribution assume Gaussian distribution. And I chose uniformly random data points. The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeansnew.py) and  [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)
  
-
-![better and different 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans3.png)
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans3.png" width="400">
+</p>
 
 
 If the data are aligned, the circular deviation is not so good. We can split the deviations about each axis. Should be careful of overfitting. It is a weak point of this clustering. The code for above two results is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans.py)  
 
-![aligned 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/alignsoftkmeans.png)
+
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/alignsoftkmeans.png" width="400">
+</p>
 
 The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/axisaligngaussiansoftkmeans.py)
 
-## Exercise 24.3 of the book. 
+### 2. The chosen exercises for Bayesian inference and maximum likelihood. 
 
-In case that the exercise asks some plots or numerical tests, I display plots on this md file. 
+#### Maximum likelihood and posterior probability, exercise 24.3 of the book. 
+
+This exercise is an extension of exercise 22.15. I think exercises 22.15 and 24.3 are very good examples to better understanding Bayesian theory. The disscusion for both exercises are completed in the [LateX file](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf).
 
 Posterior probability distribution function from given data. The distribution functions are not normalized yet. However, this plot already shows the maximum likelihood should be around mu=10. The small bumps around Xn=(-27, 3.6, 8) are also seen in the graph.
 
-![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png)
-
-![Posterior probability distribution function from given data around x=-27](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png)
-
-The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/Exercise24.3mathematica.nb)
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot.png" width="400">
+</p>
 
 
-## Exercise 27.1 of the book. 
 
-Laplace approximation of Poisson distribution
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/7scientistplot2.png" width="400">
+</p>
 
 
-![Posterior probability distribution function from given data](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/laplaceofpoisson.png)
+The mathematica analysis is found [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/Exercise24.3mathematica.pdf)
+
+
+####  Laplace approximation of Poisson distribution, exercise 27.1 of the book. 
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/laplaceofpoisson.png" width="400">
+</p>
+
 
 The mathematica analyis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.1mathematica.nb)
 
-## Exercise 27.3 of the book
+#### Bayesian regression, exercise 27.3 of the book
 
-![Likelihood and Bayesian Regression](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/LikelihoodAndBayesianRegression.png)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/LikelihoodAndBayesianRegression.png" width="400">
+</p>
+
 
 The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.3mathematica.pdf)
 
@@ -129,29 +147,39 @@ The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mac
 
 ### [ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
 
-![RejectSamplingMC mathematica](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.png)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.png" width="400">
+</p>
+
 
 The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMCmathematica.pdf)
 
-![RejectSamplingMC python](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC2.png)
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC2.png" width="400">
+</p>
+
 
 The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.py)
 
 
-## Importance sampling
+
+### 3. Monte Carlo method
+
+#### Importance sampling
 
 What I understand about importance sampling is, when we numerically integrate some function, importance sampling can reduce the cost. The detail can be found in the next link. 
 
 A practical difficulty with importance sampling is that it is hard to estimate
 how reliable the estimator is. 
 
-### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
+#### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
 
 
 
-## Metropolis-Hastings method 
+#### Metropolis-Hastings method 
 
-### [Reproduce the figure 29.12, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
+#### [Reproduce the figure 29.12, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
 
 
 
