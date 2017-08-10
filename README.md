@@ -142,10 +142,11 @@ The mathematica analyis is [here](https://github.com/physhik/Study-of-David-Mack
 
 The mathematica analysis is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise27.3mathematica.pdf)
 
+### 3. Monte Carlo method
 
-## Rejection sampling Monte Carlo method 
+#### Rejection sampling Monte Carlo method 
 
-### [ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
+[ipython notebook for reject sampling Monte Carlo method](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/RejectSamplingMC.ipynb) 
 
 
 <p align="center">
@@ -164,8 +165,6 @@ The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-boo
 
 
 
-### 3. Monte Carlo method
-
 #### Importance sampling
 
 What I understand about importance sampling is, when we numerically integrate some function, importance sampling can reduce the cost. The detail can be found in the next link. 
@@ -173,13 +172,13 @@ What I understand about importance sampling is, when we numerically integrate so
 A practical difficulty with importance sampling is that it is hard to estimate
 how reliable the estimator is. 
 
-#### [ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
+[ipython notebook for important sampling](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/ImportanceSampling.ipynb)
 
 
 
 #### Metropolis-Hastings method 
 
-#### [Reproduce the figure 29.12, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
+[Metropolis method for a toy problem, reproduced figure 29.12, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.12.ipynb)
 
 <p align="center">
 <img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/statesequence.png" width="400">
@@ -197,7 +196,9 @@ Histogram of occupancy of the states after 100, 400, and 1200 iterations from in
 <img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/independentsampling.png" width="400">
 </p>
 
-### [Markov chain Monte Carlo sampling, reproduced the figure 29.14, Mathematica notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14.pdf)
+#### Markov chain Monte Carlo sampling
+
+[Markov chain Monte Carlo sampling, reproduced the figure 29.14, Mathematica notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/reproduceFigure29.14.pdf)
 
 Transition matrix
 
@@ -236,71 +237,64 @@ The probability densities
 
 
 
-## Slice sampling Monte Carlo method 
+#### Slice sampling Monte Carlo method 
 
 
-### [Exercise 29.10, ipython notebook notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)
+[Slice sampling, exercise 29.10, ipython notebook notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)
 
 The exercise 29.10 is to find the turns from the peak to tail and from tail to peak. 
 
 The probability density is given as the follwoing.  
 
 <p align="center">
-<img src="" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10prob.png" width="400">
 </p>
 
-![probability density](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10prob.png)
 
 
 Using slice sampling (the code is found in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10.ipynb)), the number of turns it takes from the peak to tail is as follows.  
 
 <p align="center">
-<img src="" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10turns.png" width="400">
 </p>
-![number of turns](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Exercise29.10turns.png)
 
 The average of the number of turns is about 5.2362. 
 
-On the other hand, the average of the number of the turns from tail to peak is about 5.2967. 
+On the other hand, the average of the number of the turns from tail to peak is about 5.2967 from similar analysis. 
 
 They are quite close, and it makes sense because the area of the peak and the tail in the density function are matched. 
 
 
-## Hamiltonian Monte Carlo method
+#### Hamiltonian Monte Carlo method
 
 One of the weak points of Monte Carlo sampling comes up with random walks. Hamiltonial Monte Carlo method (HMC) is an approach to reduce the randomzing in algorithm of the sampling. 
 
 When we regard the energy of the system in probability distribution as potential energy term, the dynamical energy, the sum of the kinetic energy and the potential energy restrains the system. In other words, the dynamical energy conservation reduce the degree of the freedom of the system. And the phase space (x(t), p(t)) followed by Hamiltonian mechanism. As a result, the samples are to be chosen less randomly than Metropolis-Hastings sampling. 
 
-The algorithm is as follows. 
+The algorithm of Hamiltonian Monte Carlo sampling is as follows. 
 <p align="center">
-<img src="" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/algorithmhmc.png" width="400">
 </p>
 
-![algorithm of HMC](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/algorithmhmc.png)
-
-Octave source
-code for the Hamiltonian Monte
-Carlo method. Note that it is made of two main algorithms, leapfrog algorithm and Metropoils-Hastings Monte Carlo sampling. Leapfrog algorithm is nothing but finitesimal movement of the position and the momentum by Hamiltonian equation. 
+Octave source code for the Hamiltonian Monte Carlo method. Note that it is made of two main algorithms, leapfrog algorithm and Metropoils-Hastings Monte Carlo sampling. Leapfrog algorithm is nothing but finitesimal movement of the position and the momentum by Hamiltonian equation. 
 
 The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
 
 
 One of the main result is as a following picture. 
+
 <p align="center">
-<img src="" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.png" width="400">
 </p>
-![HMC](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.png)
 
-You can find more pictures and python code in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
+I would not display all the figures I obtained. You can find more pictures and python code in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb). They dramatically strengthen the efficiency of the sampling. 
 
 
-## Gibbs sampling and over-relaxation
+#### Gibbs sampling and over-relaxation
 
 The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
 One of the figure showing a big over-relaxation. 
 <p align="center">
-<img src="" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/overrelaxation.png" width="400">
 </p>
-![overrelaxation](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/overrelaxation.png)
