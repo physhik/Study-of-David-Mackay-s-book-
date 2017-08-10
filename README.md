@@ -39,45 +39,48 @@ Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
 - [Gibbs sampling Monte Carlo method and over-relaxation and figure 30.3](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
+### 3. neural network
 
-I also solved some of challenging exercises in the book, and included in the  [LateX file](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf).
+Will be updated soon. 
+
+## Displays 
+
+Here I display the figures I gained from the above python codes and mathematica notebooks. I also solved some of challenging exercises in the book, which can be found in the [LateX file](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). 
 
 
 
+### Spectral Clustering (Soft K-means)
 
-If you find the following displays interesting and want to see some detail, see the [link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/David%20Mackay's%20book%20review%20and%20some%20solutions%20of%20exercises.pdf). 
+#### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
 
-
-
-There's some numerical or analytic calculations for the book in the Mathematica files. Most of algorithms in the above chapters are also represented in the python files. I will put some numerical tests from the algorithms on this md files. 
-
-## Spectral Clustering (Soft K-means)
-
-### [ipython notebook for clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Clustering.ipynb) 
-
-I felt there's no good python tutorial for spectral clustering.   
-
-The theory for clustering and soft k-means can be found at the [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms") of David Mackay. Especially I have read chapter 20 ~ 22 and used the algorithm in the book to obtain the following figures.
+I felt there's no good python tutorial for spectral clustering. The theory for clustering and soft k-means can be found at the [book](http://www.inference.phy.cam.ac.uk/mackay/itila/book.html "Information Theory, Inference, and Learning Algorithms") of David Mackay. Especially I have read chapter 20 ~ 22 and used the algorithm in the book to obtain the following figures.
 
 <p align="center">
 <img src="https://github.com/physhik/spectral-clustering/blob/master/datapoints.png" width="400">
 </p>
 
-
-![data points plot](https://github.com/physhik/spectral-clustering/blob/master/datapoints.png)
-
 Here are the data points. I chose random 50 data from the two boxes with 0.5 lengthy edges. We know the proper K-number for K-means clustering is 2. However, when we set K>2, the K-means clustering gives a ugly result. Besides, the clustering strongly depends on the initial choice of the 4 assignment points.  
 
-![Hard K-means clustering](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/hardkmeans.png)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/hardkmeans.png" width="400">
+</p>
 
 If we set the stiffness of the soft clustering well, we can obtain the following figure.The python code for above 2 plots is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/clusternew.py) 
  
  
-![2 clusters](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png)
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/2clusters.png" width="400">
+</p>
+ 
  
 It still looks like 4 colored clusters, but the circles show the 4 clusters reduced to 2 clusters. the size of the circle is decided by the stiffness. The python code is [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/softclusternew.py) and [here](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/softcluster.py)
 
-![better 2 clusters ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans2.png)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/enhancedsoftkmeans2.png" width="400">
+</p>
+
 
 The enhanced soft K-means allow each cluster to have independent size of the circle. In the figure, two circles vanish and 2 clear clusters remain.  
  
