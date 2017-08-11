@@ -287,7 +287,7 @@ One of the main result is as a following picture.
 <img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.png" width="400">
 </p>
 
-I would not display all the figures I obtained. You can find more pictures and python code in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb). They dramatically strengthen the efficiency of the sampling. 
+I would not display all the figures I obtained. You can find more pictures and python code in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb). They dramatically strengthen the efficiency of the sampling. The long narrow ellipse is a contour plot of the 2 dimensional probability density function. Look how fast the points at (-1,1) converges inside the ellipse. Much less random than random walk.    
 
 
 #### Gibbs sampling and over-relaxation
