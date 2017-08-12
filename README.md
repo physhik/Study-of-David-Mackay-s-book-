@@ -322,5 +322,5 @@ simulations of rectangular Ising
 models, figure 31.3, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
 
 <p align="center">
-<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/IsingEM.png" width="600" height="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/IsingEM.png" width="400" height="700">
 </p>
