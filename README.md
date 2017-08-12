@@ -267,6 +267,9 @@ They are quite close, and it makes sense because the area of the peak and the ta
 
 #### Hamiltonian Monte Carlo method
 
+[Hamiltonian Monte Carlo method, figure 30.2, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
+
+
 One of the weak points of Monte Carlo sampling comes up with random walks. Hamiltonial Monte Carlo method (HMC) is an approach to reduce the randomzing in algorithm of the sampling. 
 
 When we regard the energy of the system in probability distribution as potential energy term, the dynamical energy, the sum of the kinetic energy and the potential energy restrains the system. In other words, the dynamical energy conservation reduce the degree of the freedom of the system. And the phase space (x(t), p(t)) followed by Hamiltonian mechanism. As a result, the samples are to be chosen less randomly than Metropolis-Hastings sampling. 
@@ -278,7 +281,6 @@ The algorithm of Hamiltonian Monte Carlo sampling is as follows.
 
 Octave source code for the Hamiltonian Monte Carlo method. Note that it is made of two main algorithms, leapfrog algorithm and Metropoils-Hastings Monte Carlo sampling. Leapfrog algorithm is nothing but finitesimal movement of the position and the momentum by Hamiltonian equation. 
 
-The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/HMC.ipynb)
 
 
 One of the main result is as a following picture. 
@@ -292,9 +294,20 @@ I would not display all the figures I obtained. You can find more pictures and p
 
 #### Gibbs sampling and over-relaxation
 
-The python code for HMC is in the [ipython notebook link](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
+[Gibbs sampling and over-relaxation, figure 30.3, ipython notebook ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
-One of the figure showing a big over-relaxation. 
 <p align="center">
-<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/overrelaxation.png" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/gibbsandoverrelaxation.png" width="400">
 </p>
+
+Think about narrow probability density like the above figures. All the 4 samples start at (-1.3, -1.3). Left two figures are sampled by Gibbs sampling, and the right two subplots are by over-relaxation. Thus, it reduces random walk behaviour in Gibbs sampling. 
+
+#### Ising model and Monte Carlo method
+
+[Ising model and Monte Carlo method, figure 31.2, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.png" width="400">
+</p>
+
+The first subplot is by random spins. The 2nd one is by Ising model at low temperature. The spins are aligned and the symmetry(randomness) is broken(lost). 
