@@ -314,3 +314,13 @@ Think about narrow probability density like the above figures. All the 4 samples
 
 We consider spin 1/2 systems. There are spin-ups(blue) and downs(red).  
 The first subplot is by random spins. The 2nd one is by Ising model at low temperature. The spins are aligned and the symmetry(randomness) is broken(lost). 
+
+
+
+[Mean energy and mean square magnetization from Monte Carlo
+simulations of rectangular Ising
+models, figure 31.3, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
+
+<p align="center">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/IsingEM.png" width="600" height="400">
+</p>
