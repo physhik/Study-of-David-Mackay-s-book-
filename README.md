@@ -41,7 +41,7 @@ Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
 - [Ising model and Monte Carlo method and figure 31.2](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
 
-### 3. neural network
+### 3. Neural network
 
 Will be updated soon. 
 
