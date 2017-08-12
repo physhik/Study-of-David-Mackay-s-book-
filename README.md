@@ -307,7 +307,7 @@ Think about narrow probability density like the above figures. All the 4 samples
 [Ising model and Monte Carlo method, figure 31.2, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
 
 <p align="center">
-<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.png" width="900" height="600">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.png" width="600" height="400">
 </p>
 
 We consider spin 1/2 systems. There are spin-ups(blue) and downs(red).  
