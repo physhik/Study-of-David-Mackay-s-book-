@@ -39,6 +39,8 @@ Especially, I followed Mackay's roadmap he introduced at the first of the book. 
 
 - [Gibbs sampling Monte Carlo method and over-relaxation and figure 30.3](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
+- [Ising model and Monte Carlo method and figure 31.2](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
+
 ### 3. neural network
 
 Will be updated soon. 
