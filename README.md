@@ -297,7 +297,7 @@ I would not display all the figures I obtained. You can find more pictures and p
 [Gibbs sampling and over-relaxation, figure 30.3, ipython notebook ](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Gibbs%20sampling%20and%20overrelaxation.ipynb)
 
 <p align="center">
-<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/gibbsandoverrelaxation.png" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/gibbsandoverrelaxation.png" width="800">
 </p>
 
 Think about narrow probability density like the above figures. All the 4 samples start at (-1.3, -1.3). Left two figures are sampled by Gibbs sampling, and the right two subplots are by over-relaxation. Thus, it reduces random walk behaviour in Gibbs sampling. 
@@ -307,7 +307,7 @@ Think about narrow probability density like the above figures. All the 4 samples
 [Ising model and Monte Carlo method, figure 31.2, ipython notebook](https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.ipynb)
 
 <p align="center">
-<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.png" width="400">
+<img src="https://github.com/physhik/Study-of-David-Mackay-s-book-/blob/master/Isingmodel.png" width="900" height="600">
 </p>
 
 We consider spin 1/2 systems. There are spin-ups(blue) and downs(red).  
