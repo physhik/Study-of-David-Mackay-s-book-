@@ -1,0 +1,59 @@
+# MAKEFILE FOR ansi library.
+
+CFLAGS = $(INCDIRS) \
+            	 -ansi -pedantic -g \
+		 -Wall -Wconversion -Wstrict-prototypes\
+                 -Wformat -Wmissing-prototypes -Wshadow\
+                 -Wpointer-arith -Wcast-qual -Wwrite-strings -O2 -funroll-loops
+# to profile    gprof opt2
+# to not profile, remove -pg here and below. 
+#
+# to optimize add -O2 -funroll-loops
+CC = gcc
+
+all:		opt  
+tar:
+	tar cvf ../pub/code/code.tar ./*.c ./Makefile ./ansi/*.c ./ansi/*.h ./ansi/Makefile 
+	compress -f  ../pub/code/code.tar
+
+cg:		cg.o  	./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o
+	gcc cg.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o -lm -o cg
+
+cg.o:	cg.c
+ms:		ms.o  	./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o
+	gcc ms.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o -lm -o ms
+
+ms.o:	ms.c
+msb:		msb.o  	./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o
+	gcc msb.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o -lm -o msb
+
+msb.o:	msb.c
+mnc:		mnc.o  	./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o
+	gcc mnc.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o -lm -o mnc
+
+mnc.o:	mnc.c
+mnc2:		mnc2.o fe.o ./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o ./ansi/cmatrix.o 
+	gcc mnc2.o fe.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o ./ansi/cmatrix.o -lm -o mnc2
+
+mnc2.o:	mnc2.c
+mnc3:		mnc3.o nn.o fe.o ./ansi/cg.o	./ansi/r.o ./ansi/nrutil.o ./ansi/cmatrix.o
+	gcc mnc3.o nn.o fe.o ./ansi/cg.o ./ansi/r.o ./ansi/nrutil.o ./ansi/cmatrix.o -lm -o mnc3
+
+mnc3.o:	mnc3.c
+fe.o:	fe.c fe.h
+nn.o:	nn.c nn.h
+testic:		testic.o  ./ansi/r.o ./ansi/nrutil.o
+	gcc testic.o ./ansi/r.o ./ansi/nrutil.o -lm -o testic
+
+testic.o:	testic.c
+./ansi/cg.o:		./ansi/cg.c  		
+	cd ./ansi; make cg.o
+./ansi/nrutil.o:	./ansi/nrutil.c	
+	cd ./ansi; make nrutil.o
+./ansi/new_cg.o:	./ansi/new_cg.c  		./ansi/mynr.h ./ansi/r.h
+	cd ./ansi; make new_cg.o
+./ansi/r.o:		./ansi/r.c	
+	cd ./ansi; make r.o
+./ansi/cmatrix.o:		./ansi/cmatrix.c	./ansi/cmatrix.h
+	cd ./ansi; make cmatrix.o
+

@@ -1,0 +1,34 @@
+/* smurged from tstmid.c --- gnerates gamma variates 
+ This program is used by plot.p in _doc/proteins/zipf*/
+#include "ranlib.h"
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#define min(a,b) ((a) <= (b) ? (a) : (b))
+
+
+void main(int argc,char* argv[])
+{
+  int n , i ; 
+  float param ; 
+  static char phrase[100];
+  static long is1,is2;
+
+  if ( argc != 4 )     {
+    fprintf ( stderr ,  " usage: %s ",argv[0]);
+    fprintf ( stderr , " n param seedword\n" ) ; 
+    fprintf ( stderr , " you gave %d args\n" , argc ) ; 
+    exit (0) ;
+  }
+  
+  i=0;
+  sscanf(argv[++i],"%d",&n);
+  sscanf(argv[++i],"%f",&param);
+  sscanf(argv[++i],"%s",phrase);
+  phrtsd(phrase,&is1,&is2);
+  setall(is1,is2);
+  if ( n > 1 ) fprintf ( stderr , " generating %d %f gammas\n" , n , param ) ; 
+  fflush ( stdout ) ; 
+  fflush ( stderr ) ; 
+  for(i=1; i<=n; i++) printf ( "%9g\n" ,  sgamma(param) );
+}

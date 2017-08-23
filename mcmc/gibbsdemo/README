@@ -1,0 +1,32 @@
+When I moved these demos to lewis I found 
+that the nonplotting of the surface by 'clip'
+did not wrok - the horrible surface showed up. 
+
+So I tweaked the view angle and modified things to 
+make it vanish. 
+
+the old version which worked fine is *skye.m
+
+9902
+
+on feb 2000 I tried to improve the graphics handling 
+and made changes to gibbs.m and DEMO.m, which 
+are now kept in hacks.
+Because I was failing to get it working quick, I 
+reverted to DEMOskye.m, which is
+now renamed DEMO.m
+
+
+See also itp/adler/
+
+
+The data points in this example are  N=5:
+{x} = 1.6, 0.4, 1.37, 0.63, 1.00        (x-bar = 1, sN = 0.45, sN-1 = 0.5)
+
+on 2 march 2001 I made a major improvement, including
+one-d mixture of gaussians modelling.
+
+
+
+
+
