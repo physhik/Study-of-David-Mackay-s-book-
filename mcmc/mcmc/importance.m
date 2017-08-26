@@ -1,6 +1,6 @@
 # importance.m
 function ret = importance ( style , xmin , xmax , mu, sigma , R , plotting )
-gset term
+gset term postscript
 # plotting = 1 causes graph to be shown at end only
 # plotting = 2 shows the whole lot
 height = -0.1 ;
