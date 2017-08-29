@@ -1,6 +1,6 @@
 # Python Bayesian inference and machine learning (David Mackay's machine learning textbook)
 
-### Go to my [personal blog](https://physhik.github.io/) if you want more detailed illustrations and tutorials. I do not update the theoretical review in this repository any more.  
+### Go to my [personal blog](https://physhik.github.io/) if you want more detailed illustrations and tutorials. I do not update the theoretical reviews in this repository any more. I still update various references such as solutions of interesting problems, proof of useful relations or equations, IPython notebooks, Python codes, and Mathematica notebooks.   
 
 During I study machine learning and python coding for it, the biggest trouble for me is that it's hard to find the python code for the core of the algorithm. It is easy to look for completed package, but it's never been so helpful for understanding how the real algorithm works.
 
